@@ -74,6 +74,6 @@ description: 翻墙变得越来越难,然而最近却传来了一个好消息,�
  ![Lantern 顺利翻墙](http://g1c1i0.cooear.com/images/uploads/2014/08/66.png 'Lantern 顺利翻墙')
  
  <br />
- [Goagent翻墙云梯](http://cooear.com/blog/2014/08/goagent-switchysharp-tu-wen-jiao-cheng/)
+ [Goagent翻墙云梯](http://cooear.com/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/)
  
  
