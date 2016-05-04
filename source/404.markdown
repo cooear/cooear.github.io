@@ -1,0 +1,12 @@
+---
+layout: page
+navbar: 404
+title: "404"
+date: 2016-04-30 22:16
+comments: false
+sharing: false
+footer: false
+---
+
+
+<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="http://cooear.com" homePageName="返回主页"></script>
