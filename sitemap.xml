@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://cooear.com/blog/2016/05/xx-net-jie-li-goagent/</loc>
+<lastmod>2016-05-04T20:46:17+08:00</lastmod>
+</url>
+<url>
 <loc>http://cooear.com/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/</loc>
 <lastmod>2016-05-01T00:01:48+08:00</lastmod>
 </url>
@@ -139,5 +143,11 @@
 </url>
 <url>
 <loc>http://cooear.com/tags/shadowsocks/</loc>
+</url>
+<url>
+<loc>http://cooear.com/tags/xx-net/</loc>
+</url>
+<url>
+<loc>http://cooear.com/tags/goagent/</loc>
 </url>
 </urlset>

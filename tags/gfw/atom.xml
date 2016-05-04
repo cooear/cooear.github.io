@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: GFW | 酷耳]]></title>
   <link href="http://cooear.com/tags/gfw/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-04T20:26:29+08:00</updated>
+  <updated>2016-05-04T20:51:49+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[XX-Net接力GoAgent的工具]]></title>
+    <link href="http://cooear.com/blog/2016/05/xx-net-jie-li-goagent/"/>
+    <updated>2016-05-04T20:46:17+08:00</updated>
+    <id>http://cooear.com/blog/2016/05/xx-net-jie-li-goagent</id>
+    <content type="html"><![CDATA[<p>XX-Net是一个接力GoAgent的翻墙工具，XX-Net提供GAE proxy并且稳定、易用、快速，Web界面，人性化交互等。</p>
+
+<p>XX-Net<a href="https://github.com/XX-net/XX-Net/blob/master/code/default/download.md">下载地址</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lantern(灯笼)安装和使用教程]]></title>
