@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: 查看用户 | 酷耳]]></title>
+  <link href="http://cooear.com/tags/cha-kan-yong-hu/atom.xml" rel="self"/>
+  <link href="http://cooear.com/"/>
+  <updated>2016-05-04T10:51:27+08:00</updated>
+  <id>http://cooear.com/</id>
+  <author>
+    <name><![CDATA[cooear]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[linux踢出在线用户]]></title>
+    <link href="http://cooear.com/blog/2013/08/linuxti-chu-zai-xian-yong-hu/"/>
+    <updated>2013-08-30T14:37:46+08:00</updated>
+    <id>http://cooear.com/blog/2013/08/linuxti-chu-zai-xian-yong-hu</id>
+    <content type="html"><![CDATA[<h3>linux踢出远程登录用户命令：</h3>
+
+<p>查看当前自己的终端：</p>
+
+<pre><code>[root@belen ~]# who am i
+root     pts/1        2013-01-22 10:45 (192.168.250.110)
+</code></pre>
+
+<p><strong>一、</strong> 输入w命令查看已登录用户信息
+    <!--more--></p>
+
+<pre><code>[root@belen ~]# who
+root     pts/0        2013-01-22 09:56 (192.168.250.27)
+root     pts/1        2013-01-22 10:45 (192.168.250.110)
+[root@belen ~]# w
+10:46:13 up 4 days, 16:28,  2 users,  load average: 0.36, 0.38, 0.29
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    192.168.250.27   09:56   12:03   0.02s  0.02s -bash
+root     pts/1    192.168.250.110  10:45    0.00s  0.02s  0.01s w   
+</code></pre>
+
+<p><strong>二、</strong> 踢出用户:pkill -kill -t 用户tty</p>
+
+<pre><code>[root@belen ~]# pkill -kill -t pts/0
+</code></pre>
+
+<p><strong>三、</strong> 验证操作是否成功</p>
+
+<pre><code>[root@belen ~]# w
+10:48:17 up 4 days, 16:30,  1 user,  load average: 0.32, 0.35, 0.28
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/1    192.168.250.110  10:45    0.00s  0.03s  0.02s w
+</code></pre>
+
+<p><br /><br /><br /></p>
+
+<hr />
+
+<p><strong>w命令的属性解释</strong>：</p>
+
+<hr />
+
+<ul>
+<li>USER：显示登陆用户帐号名。用户重复登陆，该帐号也会重复出现。</li>
+<li>TTY：用户登陆所用的终端。</li>
+<li>FROM：显示用户在何处登陆系统。</li>
+<li>LOGIN@：是LOGIN AT的意思，表示登陆进入系统的时间。</li>
+<li>IDLE：用户空闲时间，从用户上一次任务结束后，开会记时。</li>
+<li>JCPU：一终端代号来区分，表示在摸段时间内，所有与该终端相关的进程任务所耗费的CPU时间。</li>
+<li>PCPU：指WHAT域的任务执行后耗费的CPU时间。</li>
+<li>WHAT：表示当前执行的任务</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

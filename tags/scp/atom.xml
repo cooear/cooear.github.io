@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: scp | 酷耳]]></title>
+  <link href="http://cooear.com/tags/scp/atom.xml" rel="self"/>
+  <link href="http://cooear.com/"/>
+  <updated>2016-05-04T10:51:27+08:00</updated>
+  <id>http://cooear.com/</id>
+  <author>
+    <name><![CDATA[cooear]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linux下scp语法命令具体实例总结]]></title>
+    <link href="http://cooear.com/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie/"/>
+    <updated>2013-08-03T15:13:58+08:00</updated>
+    <id>http://cooear.com/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie</id>
+    <content type="html"><![CDATA[<p>　　<strong>scp</strong>就是secure copy可以简单的理解为是利用SSH协议来传输数据的cp命令，使用和ssh相同的认证方式，提供相同的安全保证 。但是两者的区别在于cp命令是在同一台物理主机上使用的，而scp则可以在两台不同的物理主机上传输文件数据。</p>
+
+<p><strong>SCP</strong>命令语法:</p>
+
+<pre><code>scp [-1245BCpqrv] [-c cipher] [F ssh_config] [-I identity_file] [-l limit] [-o ssh_option] [-P port] [-S program] [[user@]host1:] file1 […] [[suer@]host2:]file2
+</code></pre>
+
+<p>scp可选参数：</p>
+
+<!--more-->
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">相关参数</th>
+<th style="text-align:center;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">-v</td>
+<td style="text-align:center;">和大多数 linux 命令中的 -v 意思一样 , 用来显示进度 . 可以用来查看连接 , 认证 , 或是配置错误 .</td>
+</tr>
+<tr>
+<td style="text-align:center;">-C</td>
+<td style="text-align:center;">使能压缩选项</td>
+</tr>
+<tr>
+<td style="text-align:center;">-P</td>
+<td style="text-align:center;"> 选择端口 . 注意 -p 已经被 rcp 使用 .</td>
+</tr>
+<tr>
+<td style="text-align:center;">-4</td>
+<td style="text-align:center;"> 强行使用 IPV4 地址 . </td>
+</tr>
+<tr>
+<td style="text-align:center;">-6</td>
+<td style="text-align:center;">强行使用 IPV6 地址 .</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>scp是linux下的远程拷贝</p>
+
+<p>命令：</p>
+
+<ol>
+<li><p>将本地文件拷贝到远程：scp  文件名 用户名@计算机IP或者计算机名称:远程路径</p>
+
+<pre><code> scp local_file remote_username@remote_ip:remote_folder
+</code></pre></li>
+<li><p>从远程将文件拷回本地：scp  用户名@计算机IP或者计算机名称:文件名 本地路径</p>
+
+<pre><code> scp remote_username@remote_ip:remote_folder local_file
+</code></pre></li>
+<li><p>将本地目录拷贝到远程：scp -r 目录名   用户名@计算机IP或者计算机名称:远程路径</p>
+
+<pre><code> scp -r local_folder remote_username@remote_ip:remote_dir
+</code></pre></li>
+<li><p>从远程将目录拷回本地：scp -r   用户名@计算机IP或者计算机名称:目录名本地路径</p>
+
+<pre><code> scp -r remote_username@remote_ip:remote_folder local_dir
+</code></pre></li>
+</ol>
+
+
+<p>　　另外，作为网站管理员会经常涉及两天计算机间的文件传输，如：数据文件的异地备份，但作为脚本又不可能自己输入scp的用户密码，故总结了一下两张方法：</p>
+
+<ul>
+<li><p>方法一:</p>
+
+<pre><code>  sshpass -p 'password' scp file.gz root@xxx.xxx.xxx.1:/backup
+</code></pre></li>
+<li><p>方法二:</p>
+
+<pre><code>  #!/usr/bin/expect
+  spawn scp  backup.sql.gz root@remote_ip:remote_folder
+  set pass "password"
+  expect {
+      password: {send "$pass\r"; exp_continue}
+  }   
+</code></pre></li>
+<li><p>执行这个脚本</p>
+
+<pre><code>  expect send_file.exp
+</code></pre></li>
+</ul>
+
+
+<p><br /><br /></p>
+
+<hr />
+
+<p><strong>注</strong>:网上还普遍有一种方法“建立两台计算机之间的安全信任关系”这样在脚本执行scp时也可不输入密码，但cooear不太喜欢这种方法所有没有介绍，需要的可以自行Google。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: ShadowSocks | 酷耳]]></title>
+  <link href="http://cooear.com/tags/shadowsocks/atom.xml" rel="self"/>
+  <link href="http://cooear.com/"/>
+  <updated>2016-05-04T10:51:27+08:00</updated>
+  <id>http://cooear.com/</id>
+  <author>
+    <name><![CDATA[cooear]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OpenWrt使用ShadowSocks透明代理智能翻墙上网]]></title>
+    <link href="http://cooear.com/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/"/>
+    <updated>2015-02-14T10:00:09+08:00</updated>
+    <id>http://cooear.com/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang</id>
+    <content type="html"><![CDATA[<p>　　<font color=red >本教程前提是需要有一个ShadowSocks账号或安装ShadowSocks服务的VPS（墙外的）</font>。</p>
+
+<h3>一、安装<strong>OpenWrt</strong>并配置上网</h3>
+
+<ol>
+<li><p>telnet 192.168.1.1 至Openwrt并修改root密码</p>
+
+<pre><code> telnet 192.168.1.1  
+</code></pre></li>
+<li><p>配置上网参数</p>
+
+<pre><code> uci set network.wan.proto=pppoe
+ uci set network.wan.username=name
+ uci set network.wan.password=123456
+ uci commit network ifup wan
+</code></pre></li>
+<li><p>安装luci界面，并配置开机启动</p>
+
+<pre><code> opkg update
+ opkg install luci
+ /etc/init.d/uhttpd start
+ /etc/init.d/uhttpd enable 
+</code></pre></li>
+<li><p>修改luci界面端口号</p>
+
+<pre><code> vim /etc/config/uhttpd
+</code></pre>
+
+<p> <!--more--></p></li>
+<li><p>修改ssh默认的22端口号</p>
+
+<pre><code> vim /etc/config/dropbear
+</code></pre></li>
+<li><p>自定义DNS</p>
+
+<p> <em>a.</em> 创建 /etc/config/sec_resolv.conf</p>
+
+<pre><code> vim /etc/config/sec_resolv.conf
+ nameserver 8.8.8.8
+ nameserver 8.8.4.4
+ nameserver 208.67.222.222
+</code></pre>
+
+<p> <em>b.</em>  编辑 /etc/config/dhcp</p>
+
+<p> 找到 option resolvfile 选项，替换/tmp/resolv.conf.auto为/etc/config/sec_resolv.conf.</p></li>
+</ol>
+
+
+<h3>二、软件包安装</h3>
+
+<p>执行命令：</p>
+
+<pre><code>opkg update
+</code></pre>
+
+<p>shadowsocks-libev<a href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/">下载</a>：</p>
+
+<p>必须包安装：</p>
+
+<p>olarssl版本的shadowsocks（polarssl体积更小）：</p>
+
+<pre><code>opkg install iptables-mod-nat-extra ipset libpolarssl
+</code></pre>
+
+<p>普通版本（openssl）的shadowsocks，那么(openssl兼容性更好)：</p>
+
+<pre><code>opkg install iptables-mod-nat-extra ipset libopenssl
+</code></pre>
+
+<p>卸载dnsmasq并安装dnsmasq-full以及相应的扩展包(dnsmasq没有ipset功能)</p>
+
+<pre><code>opkg remove dnsmasq &amp;&amp; opkg install dnsmasq-full
+cd /tmp
+opkg install shadowsocks-libev_x.x.x-x_ar71xx.ipk
+</code></pre>
+
+<h3>三、配置</h3>
+
+<ol>
+<li><p>配置/etc/shadowsocks.json</p>
+
+<pre><code> {
+     "server": "X.X.X.X",
+     "server_port": "443",
+     "password": "password",
+     "local_port": "1080",
+     "method": "aes-256-cfb"
+ }
+</code></pre></li>
+<li><p>修改/etc/init.d/shadowsocks ，其实就是把Client Mode注释掉再把Proxy Mode的注释去掉</p>
+
+<pre><code> #!/bin/sh /etc/rc.common
+
+ START=95
+
+ SERVICE_USE_PID=1
+ SERVICE_WRITE_PID=1
+ SERVICE_DAEMONIZE=1
+ SERVICE_PID_FILE=/var/run/shadowsocks.pid
+ CONFIG=/etc/shadowsocks.json
+
+ start() {
+     # Client Mode
+     #service_start /usr/bin/ss-local -c $CONFIG -f $SERVICE_PID_FILE
+     # Proxy Mode
+     service_start /usr/bin/ss-redir -c $CONFIG -f $SERVICE_PID_FILE
+ }
+
+ stop() {
+     # Client Mode
+     #service_stop /usr/bin/ss-local
+     # Proxy Mode
+     service_stop /usr/bin/ss-redir
+ }
+</code></pre></li>
+<li><p>启动shadowsocks，并设置开机运行：</p>
+
+<pre><code> /etc/init.d/shadowsocks enable
+ /etc/init.d/shadowsocks start
+</code></pre></li>
+</ol>
+
+
+<h3>四、配置dnsmasq和ipset</h3>
+
+<ol>
+<li><p>将iptables规则加入防火墙中（添加至/etc/rc.local可开机启动）</p>
+
+<pre><code> ipset -N gfwlist iphash
+ iptables -t nat -A PREROUTING -p tcp -m set –match-set gfwlist dst -j REDIRECT –to-port 1080
+ iptables -t nat -A OUTPUT -p tcp -m set –match-set gfwlist dst -j REDIRECT –to-port 1080
+</code></pre></li>
+<li><p>修改/etc/dnsmasq.conf，在最后加入 conf-dir=/etc/dnsmasq.d ，新建并进入目录/etc/dnsmasq.d，并将my_dnsmasq.conf放入该目录。</p>
+
+<p> my_dnsmasq.conf具体格式如下：</p>
+
+<pre><code> #使用不受污染干扰的DNS解析该域名 可以将此IP改为自己使用的DNS服务器
+ server=/google.com/208.67.222.222#443
+ #将解析出来的IP保存到名为gfwlist的ipset表中
+ ipset=/google.com/gfwlist
+</code></pre></li>
+</ol>
+
+
+<h3>五、ss-tunnel转发UDP的DNS的请求</h3>
+
+<pre><code>#!/bin/sh /etc/rc.common
+
+START=95
+
+SERVICE_USE_PID=1
+SERVICE_WRITE_PID=1
+SERVICE_DAEMONIZE=1
+SERVICE_PID_FILE=/var/run/shadowsocks.pid
+CONFIG=/etc/shadowsocks.json
+DNS=8.8.8.8:53
+TUNNEL_PORT=5353
+
+start() {
+    # Client Mode
+    #service_start /usr/bin/ss-local -c $CONFIG -f $SERVICE_PID_FILE
+    # Proxy Mode
+    service_start /usr/bin/ss-redir -c $CONFIG -f $SERVICE_PID_FILE
+    # Tunnel
+    service_start /usr/bin/ss-tunnel -c $CONFIG -u -l $TUNNEL_PORT -L $DNS
+}
+
+stop() {
+    # Client Mode
+    #service_stop /usr/bin/ss-local
+    # Proxy Mode
+    service_stop /usr/bin/ss-redir
+    # Tunnel
+    service_stop /usr/bin/ss-tunnel
+}
+</code></pre>
+
+<p><strong>注</strong>：至此路由器已经my_dnsmasq.conf里面的域名已经会自动使用ss代理翻墙</p>
+]]></content>
+  </entry>
+  
+</feed>

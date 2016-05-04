@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>酷耳</title>
+  <meta name="author" content="cooear">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,85 +14,727 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cooear.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <link rel="canonical" href="http://cooear.com/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="酷耳" type="application/atom+xml">
+
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://cooear.com/">
+  <meta property="og:title" content="酷耳">
+  <meta property="og:description" content="编程，扯淡，再编程。">
+
+  <meta name="baidu-site-verification" content="1Lwtt89368" />
+<script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function addBlankTargetForLinks () {
+	  $('a[href^="http"]').each(function(){
+	      $(this).attr('target', '_blank');
+	  });
+	}
+
+	$(document).bind('DOMNodeInserted', function(event) {
+	  addBlankTargetForLinks();
+	});	
+</script>
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">酷耳</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="cooear.github.io">
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/about/">About</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="cooear.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  <div class="pagination">
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <div class="blog-index" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="酷耳" />
+    <meta itemprop="description" content="编程，扯淡，再编程。" />
+    <meta itemprop="url" content="http://cooear.com" />
+      
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-    <a href="/blog/archives">Blog Archives</a>
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-05-01T00:01:48+08:00"  data-updated="true" itemprop="datePublished dateCreated">2016-05-01</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/" itemprop="url">20个比较高级的Linux命令</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>也许你已经发现了前面关于<strong>Linux</strong>初级用户(刚接触<strong>Linux</strong>的用户)的20个命令非常有用。前面的那篇文章是为初学者准备，而这篇则是为有一定基础的中级用户准备。通过这篇文章你将了解到如何去自定义搜索，如何了解正在运行的进程并<strong>kill</strong>这些进程，另外就是了解<strong>Linux</strong>命令行的重要以及如何在类unix系统中编译<strong>C,C++,java</strong>程序。</p>
+
+<ol>
+<li><p><strong>Find命令</strong></p>
+
+<p> 在指定的目录中从父目录开始逐级向下分层查询要查询的文件。</p>
+
+<p> </div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-04-29T18:13:51+08:00"  data-updated="true" itemprop="datePublished dateCreated">2016-04-29</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/04/guo-wai-dnsfu-wu-qi-lie-biao/" itemprop="url">国外DNS服务器列表</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3>对付DNS劫持，就要国外DNS服务器：</h3>
+
+<pre><code>8.8.8.8    
+8.8.4.4
+
+##支持非标准端口(443、5353)
+208.67.222.222    
+208.67.220.220
+
+209.244.0.3    
+209.244.0.4
+
+156.154.70.1
+156.154.71.1
+
+4.2.2.1    
+4.2.2.2
+
+208.76.50.50
+208.76.51.51
+
+198.153.192.40
+198.153.194.40
+
+198.153.192.50
+198.153.194.50
+
+198.153.192.60    
+198.153.194.60
+
+8.26.56.26
+8.20.247.20
+
+184.169.143.224
+184.169.161.155
+
+67.138.54.100
+207.225.209.66
+</code></pre>
+
+</div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2016/04/guo-wai-dnsfu-wu-qi-lie-biao/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-14T10:00:09+08:00"  data-updated="true" itemprop="datePublished dateCreated">2015-02-14</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/" itemprop="url">OpenWrt使用ShadowSocks透明代理智能翻墙上网</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>　　<font color=red >本教程前提是需要有一个ShadowSocks账号或安装ShadowSocks服务的VPS（墙外的）</font>。</p>
+
+<h3>一、安装<strong>OpenWrt</strong>并配置上网</h3>
+
+<ol>
+<li><p>telnet 192.168.1.1 至Openwrt并修改root密码</p>
+
+<pre><code> telnet 192.168.1.1  
+</code></pre></li>
+<li><p>配置上网参数</p>
+
+<pre><code> uci set network.wan.proto=pppoe
+ uci set network.wan.username=name
+ uci set network.wan.password=123456
+ uci commit network ifup wan
+</code></pre></li>
+<li><p>安装luci界面，并配置开机启动</p>
+
+<pre><code> opkg update
+ opkg install luci
+ /etc/init.d/uhttpd start
+ /etc/init.d/uhttpd enable 
+</code></pre></li>
+<li><p>修改luci界面端口号</p>
+
+<pre><code> vim /etc/config/uhttpd
+</code></pre>
+
+<p> </div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-09T12:29:42+08:00"  data-updated="true" itemprop="datePublished dateCreated">2014-08-09</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/" itemprop="url">Lantern(灯笼)安装和使用教程</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>　　<a href="https://www.getlantern.org/">Lantern</a> 的主要目的是访问：得到快速可靠的连接，拥抱广阔的因特网，自由浏览。绝大多数翻墙软件需要服务器。在Lantern系统中，每台机器都可以作为服务器，从而比其他工 具提供更多的容量。通过运行Lantern，每个在非封锁区的电脑，都可以变成封锁区用户的代理，使他们可以访问被封锁的网站，诸如 Twitter，Facebook，Youtube，等等。Lantern的核心是信任网络，使用者邀请他们的朋友来建立Lantern网络（使用最新版的Lantern当前为1.4无需邀请直接使用）。通过只邀请他们信任的人分享因特网连接，大家共同努力，来增加网络反抗审查者的封锁的能力。你的Lantern朋友越多，因特网的速度和可靠性就越高。工作原理如下图：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2014/08/50b24994.vis.gif" title="Lantern 工作原理" alt="Lantern 工作原理" /></p>
+
+</div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-05-03T10:37:34+08:00"  data-updated="true" itemprop="datePublished dateCreated">2014-05-03</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/" itemprop="url">GAE(Google App Engine)+goagent+chrome浏览器+switchysharp图文教程</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>作为一个技术宅、IT男，同时为了满足我们的好奇心，求知欲，或不可告人的目的，我们常常需要看看“墙外”的风光。Windows下方便的有自由门、逍遥游等可以满足这个小小的要求，可会不定时的遭到“暗杀”，且网速慢、不稳定，用着十分的不爽。</p>
+
+<p>现在推荐一个基于GAE（Google App Engine）+ goagent + switchysharp + chrome的翻墙之法，请不要害怕这过长的篇幅，设置的过程是相当的简单的，按部就班的来10分钟左右搞定。设置过程如下：</p>
+
+<h3>一、简单介绍</h3>
+
+<ol>
+<li>GAE（Google App Engine）是一个开发、托管网络应用程序的平台；</li>
+<li>goagent是一个使用Python和Google Appengine SDK编写的代理软件；</li>
+<li>switch sharp是一个chrome插件，具体功能类似于Firefox的AutoProxy.</li>
+</ol>
+
+
+<h3>二、确保自己拥有一个Google账户</h3>
+
+<p><strong>step1</strong>: 创建Google账号，并登录<a href="https://appengine.google.com/start/createapp">Google App Engine</a>按下图操作(已有账号的请跳过);</p>
+
+</div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-04-25T00:01:24+08:00"  data-updated="true" itemprop="datePublished dateCreated">2014-04-25</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/04/linuxzhong-findming-ling-shi-li/" itemprop="url">Linux中find命令实例</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description">
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-02-25T16:20:32+08:00"  data-updated="true" itemprop="datePublished dateCreated">2014-02-25</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2014/02/12ge-fei-chang-you-yong-de-df-ming-ling-cha-kan-linuxci-pan-kong-jian/" itemprop="url">12个非常有用的”df”命令查看Linux磁盘空间</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>　　你也许会在网上发现很用用于检查<strong>Linux</strong>磁盘空间的工具。然而，Linux拥有强大的内置磁盘空间检查工具"df"。"df"是"disk filesystem"的缩写，用于检查<strong>Linux</strong>系统上有效的可用磁盘空间。
+　　
+　　使用"-h"参数即(df -h)以对人友好的数据格式(kb,mb,GB)展示磁盘使用情况。这篇文章将用"df"命令全面的展示一种检查磁盘空间的方法。</p>
+
+<ol>
+<li><p>检查磁盘使用情况。</p>
+
+<p> &ldquo;df"命令显示设备名称，总数据块，总磁盘空间，使用的磁盘空间，可用的磁盘空间和挂载的文件系统节点。</p>
+
+<p> </div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2014/02/12ge-fei-chang-you-yong-de-df-ming-ling-cha-kan-linuxci-pan-kong-jian/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-30T14:37:46+08:00"  data-updated="true" itemprop="datePublished dateCreated">2013-08-30</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/08/linuxti-chu-zai-xian-yong-hu/" itemprop="url">Linux踢出在线用户</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3>linux踢出远程登录用户命令：</h3>
+
+<p>查看当前自己的终端：</p>
+
+<pre><code>[root@belen ~]# who am i
+root     pts/1        2013-01-22 10:45 (192.168.250.110)
+</code></pre>
+
+<p><strong>一、</strong> 输入w命令查看已登录用户信息
+    </div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2013/08/linuxti-chu-zai-xian-yong-hu/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-23T15:47:25+08:00"  data-updated="true" itemprop="datePublished dateCreated">2013-08-23</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/08/linuxri-zhi-xi-tong-qian-xi/" itemprop="url">Linux日志系统浅析</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>　　当我们使用的Linux系统正常运行时，花费一些时间去学习和了解Linux的日志系统/var/log 还是很有必要的;因为当你了解路Linux的日志系统时当服务器或者某项服务运行不正常时可以很方便的通过日志定位问题所在,所以正确的设置Linux的日志输出可以达到事半功倍的效果。通常情况下你可以使用less、more、cat、vi、grep或者tail命令来查看log文件的内容。</p>
+
+<p>定义：</p>
+
+<p>　　<strong>log files:UNIX/LINUX</strong>有一个严格的政策不报告错误消息到用户界面即使可能没有用户在阅读这些消息。而错误消息的交互命令发送到终端屏幕、错误或信息消息产生的非交互式命令是“记录”的文件在目录<strong>/var/log/</strong>;日志文件在<strong>/var/log</strong>通常可以无限增长,可能需要定期清洗。
+　　</p>
+
+</div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2013/08/linuxri-zhi-xi-tong-qian-xi/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-03T15:13:58+08:00"  data-updated="true" itemprop="datePublished dateCreated">2013-08-03</time>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie/" itemprop="url">Linux下scp语法命令具体实例总结</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>　　<strong>scp</strong>就是secure copy可以简单的理解为是利用SSH协议来传输数据的cp命令，使用和ssh相同的认证方式，提供相同的安全保证 。但是两者的区别在于cp命令是在同一台物理主机上使用的，而scp则可以在两台不同的物理主机上传输文件数据。</p>
+
+<p><strong>SCP</strong>命令语法:</p>
+
+<pre><code>scp [-1245BCpqrv] [-c cipher] [F ssh_config] [-I identity_file] [-l limit] [-o ssh_option] [-P port] [-S program] [[user@]host1:] file1 […] [[suer@]host2:]file2
+</code></pre>
+
+<p>scp可选参数：</p>
+
+</div>
+  
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+        </article>
+      
+    </div>
+
+    <ul class="pager">
+      
+        <li class="previous"><a href="/posts/2">&larr;&nbsp;Older</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
+      
+    </ul>
+  </div>
+
+  
+    <aside class="sidebar col-md-3">
+      
+        <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/">20个比较高级的Linux命令</a>
+    
+    <a class="list-group-item " href="/blog/2016/04/guo-wai-dnsfu-wu-qi-lie-biao/">国外DNS服务器列表</a>
+    
+    <a class="list-group-item " href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">OpenWrt使用ShadowSocks透明代理智能翻墙上网</a>
+    
+    <a class="list-group-item " href="/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern(灯笼)安装和使用教程</a>
+    
+    <a class="list-group-item " href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">GAE(Google App Engine)+goagent+chrome浏览器+switchysharp图文教程</a>
     
   </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-  </ul>
 </section>
 
 
 
 
 
-  
-</aside>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+<a style="font-size: 125%" href="/tags/fan-qiang/">翻墙</a>
+<a style="font-size: 145%" href="/tags/vpn/">VPN</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
+<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
+<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 145%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
+<a style="font-size: 125%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 90%" href="/tags/google/">Google</a>
+<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
+<a style="font-size: 90%" href="/tags/gae/">GAE</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 125%" href="/tags/gmail/">Gmail</a>
+<a style="font-size: 180%" href="/tags/linux/">Linux</a>
 
+  </ul>
+</section>
+
+      
+    </aside>
+  
+</div>
+
+        </div>
+      </div>
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2016 - cooear<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> & <a href="http://cooear.com">酷耳</a></span>.
+      <!--<span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.-->
+  </small>
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?a8e2bd164d0f4e6ce26d50a36471c121";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
 </p>
 
+</div>
 </footer>
-  
+    
 
 
 
@@ -104,19 +742,10 @@
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-
-
-</body>
+  </body>
 </html>

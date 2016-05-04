@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: 语法 | 酷耳]]></title>
+  <link href="http://cooear.com/tags/yu-fa/atom.xml" rel="self"/>
+  <link href="http://cooear.com/"/>
+  <updated>2016-05-04T10:51:27+08:00</updated>
+  <id>http://cooear.com/</id>
+  <author>
+    <name><![CDATA[cooear]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[20个比较高级的Linux命令]]></title>
+    <link href="http://cooear.com/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/"/>
+    <updated>2016-05-01T00:01:48+08:00</updated>
+    <id>http://cooear.com/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling</id>
+    <content type="html"><![CDATA[<p>也许你已经发现了前面关于<strong>Linux</strong>初级用户(刚接触<strong>Linux</strong>的用户)的20个命令非常有用。前面的那篇文章是为初学者准备，而这篇则是为有一定基础的中级用户准备。通过这篇文章你将了解到如何去自定义搜索，如何了解正在运行的进程并<strong>kill</strong>这些进程，另外就是了解<strong>Linux</strong>命令行的重要以及如何在类unix系统中编译<strong>C,C++,java</strong>程序。</p>
+
+<ol>
+<li><p><strong>Find命令</strong></p>
+
+<p> 在指定的目录中从父目录开始逐级向下分层查询要查询的文件。</p>
+
+<p> <!--more--></p>
+
+<pre><code> root@belen:~# find -name *.sh 
+ ./Desktop/load.sh 
+ ./Desktop/test.sh 
+ ./Desktop/shutdown.sh 
+ ./Binary/firefox/run-mozilla.sh 
+ ./Downloads/kdewebdev-3.5.8/quanta/scripts/externalpreview.sh 
+ ./Downloads/kdewebdev-3.5.8/admin/doxygen.sh 
+ ./Downloads/kdewebdev-3.5.8/admin/cvs.sh 
+ ./Downloads/kdewebdev-3.5.8/admin/ltmain.sh 
+ ./Downloads/wheezy-nv-install.sh 
+</code></pre>
+
+<p> <strong>注意</strong>："-name"是区分大小写的搜索。你可以使用"-iname"参数进行不区分大小写的搜索。(* 是一个通配符是搜索所有后缀名为'.sh'的文件)</p>
+
+<pre><code> root@belen:~# find -iname *.SH ( find -iname *.Sh /  find -iname *.sH)
+ ./Desktop/load.sh 
+ ./Desktop/test.sh 
+ ./Desktop/shutdown.sh 
+ ./Binary/firefox/run-mozilla.sh 
+ ./Downloads/kdewebdev-3.5.8/quanta/scripts/externalpreview.sh 
+ ./Downloads/kdewebdev-3.5.8/admin/doxygen.sh 
+ ./Downloads/kdewebdev-3.5.8/admin/cvs.sh 
+ ./Downloads/kdewebdev-3.5.8/admin/ltmain.sh 
+ ./Downloads/wheezy-nv-install.sh
+
+
+
+ root@belen:~# find -name *.tar.gz 
+ /var/www/modules/update/tests/aaa_update_test.tar.gz 
+ ./var/cache/flashplugin-nonfree/install_flash_player_11_linux.i386.tar.gz 
+ ./home/server/Downloads/drupal-7.22.tar.gz 
+ ./home/server/Downloads/smtp-7.x-1.0.tar.gz 
+ ./home/server/Downloads/noreqnewpass-7.x-1.2.tar.gz 
+ ./usr/share/gettext/archive.git.tar.gz 
+ ./usr/share/doc/apg/php.tar.gz 
+ ./usr/share/doc/festival/examples/speech_pm_1.0.tar.gz 
+ ./usr/share/doc/argyll/examples/spyder2.tar.gz 
+ ./usr/share/usb_modeswitch/configPack.tar.gz        
+</code></pre>
+
+<p> <strong>注意</strong>：上面的命令是在root目录包括其下面所有子目录挂载的设备目录中搜索扩展名为"tar.gz"的文件。更多<strong>find</strong>相关命令，请查看。 <br/>
+<br/></p></li>
+<li><p><strong>grep命令</strong></p>
+
+<p> &ldquo;grep"命令在指定的文件中逐行匹配要搜索的字符。如：在&rdquo;/etc/passwd"中搜索用户'belen'。</p>
+
+<pre><code> root@belen:~# grep tecmint /etc/passwd 
+ belen:x:1000:1000:Belen,,,:/home/belen:/bin/bash
+</code></pre>
+
+<p> 忽略字符大小写需要使用"-i"参数。</p>
+
+<pre><code> root@belen:~# grep -i BELEN /etc/passwd 
+ belen:x:1000:1000:Belen,,,:/home/belen:/bin/bash
+</code></pre>
+
+<p> 递归搜索使用参数"-r"，如：在指定目录中逐个目录搜索包含"127.0.0.1"。</p>
+
+<pre><code> root@belen:~# grep -r "127.0.0.1" /etc/ 
+ /etc/vlc/lua/http/.hosts:127.0.0.1
+ /etc/speech-dispatcher/modules/ivona.conf:#IvonaServerHost "127.0.0.1"
+ /etc/mysql/my.cnf:bind-address      = 127.0.0.1
+ /etc/apache2/mods-available/status.conf:    Allow from 127.0.0.1 ::1
+ /etc/apache2/mods-available/ldap.conf:    Allow from 127.0.0.1 ::1
+ /etc/apache2/mods-available/info.conf:    Allow from 127.0.0.1 ::1
+ /etc/apache2/mods-available/proxy_balancer.conf:#    Allow from 127.0.0.1 ::1
+ /etc/security/access.conf:#+ : root : 127.0.0.1
+ /etc/dhcp/dhclient.conf:#prepend domain-name-servers 127.0.0.1;
+ /etc/dhcp/dhclient.conf:#  option domain-name-servers 127.0.0.1;
+ /etc/init/network-interface.conf:   ifconfig lo 127.0.0.1 up || true
+ /etc/java-6-openjdk/net.properties:# localhost &amp; 127.0.0.1).
+ /etc/java-6-openjdk/net.properties:# http.nonProxyHosts=localhost|127.0.0.1
+ /etc/java-6-openjdk/net.properties:# localhost &amp; 127.0.0.1).
+ /etc/java-6-openjdk/net.properties:# ftp.nonProxyHosts=localhost|127.0.0.1
+ /etc/hosts:127.0.0.1    localhost       
+</code></pre>
+
+<p> <strong>注意</strong>：你还可以在grep命令后使用一下参数。</p>
+
+<p> <strong>-w</strong> 匹配单词(<strong>egrep -w &lsquo;word1 | word2&rsquo; /path/to/file</strong>)在指定文件中匹配word1或者word2这两个单词。 -c 计数(grep -c &lsquo;word&rsquo; /path/to/file)即在指定文件中出现'word'的次数 -color 着重色输出(<strong>grep -color server /etc/passwd</strong>)</p>
+
+<p> <br/></p></li>
+<li><p><strong>man命令</strong></p>
+
+<p> &lsquo;man'是系统自带的手册帮助也。Man为所有命令可以使用的参数提供在线帮助文档。比如：</p>
+
+<pre><code> root@belen:~# man man
+
+         MAN(1)
+         Manual pager utils
+         MAN(1)
+
+ NAME
+        man - an interface to the on-line reference manuals
+
+ SYNOPSIS
+        man  [-C  file]  [-d]  [-D]  [--warnings[=warnings]]  [-R  encoding]  [-L  locale]  [-m  system[,...]]  [-M  path]  [-S list] [-e extension] [-i|-I]
+        [--regex|--wildcard] [--names-only] [-a] [-u] [--no-subpages] [-P pager] [-r prompt] [-7] [-E encoding] [--no-hyphenation] [--no-justification]  [-p
+        string] [-t] [-T[device]] [-H[browser]] [-X[dpi]] [-Z] [[section] page ...] ...
+        man -k [apropos options] regexp ...
+        man -K [-w|-W] [-S list] [-i|-I] [--regex] [section] term ...
+        man -f [whatis options] page ...
+        man -l [-C file] [-d] [-D] [--warnings[=warnings]] [-R encoding] [-L locale] [-P pager] [-r prompt] [-7] [-E encoding] [-p string] [-t] [-T[device]]
+        [-H[browser]] [-X[dpi]] [-Z] file ...
+        man -w|-W [-C file] [-d] [-D] page ...
+        man -c [-C file] [-d] [-D] page ...
+        man [-hV]
+</code></pre>
+
+<p> &ldquo;<strong>Man</strong>"自己的手册帮助页，再比如'man cat'和'man ls'。</p>
+
+<p> <strong>注意</strong>：man 帮助页对于命令的学习使用非常有用。</p>
+
+<p> <br/></p></li>
+<li><p><strong>ps命令</strong></p>
+
+<p> ps命令打印出正在运行的进程的唯一id和PID。</p>
+
+<pre><code> root@belen:~# ps
+ PID TTY          TIME CMD
+ 4170 pts/1    00:00:00 bash
+ 9628 pts/1    00:00:00 ps
+</code></pre>
+
+<p> 使用'-A'参数列出所有拥有Id和PID的进程。</p>
+
+<pre><code> root@belen:~# ps -A
+
+  PID TTY          TIME CMD
+     1 ?        00:00:01 init
+     2 ?        00:00:00 kthreadd
+     3 ?        00:00:01 ksoftirqd/0
+     5 ?        00:00:00 kworker/0:0H
+     7 ?        00:00:00 kworker/u:0H
+     8 ?        00:00:00 migration/0
+     9 ?        00:00:00 rcu_bh
+ ....
+</code></pre>
+
+<p> <strong>注意</strong>：当你想知道系统中有那些进程正在运行或者你需要PID去结束一个进程时这个命令是非常有用的。你可用把这个命令和'grep'结合使用可以精准输出有用的信息。</p>
+
+<pre><code> root@belen:~# ps -A | grep -i ssh
+
+ 1500 ?        00:09:58 sshd
+ 4317 ?        00:00:00 sshd
+</code></pre>
+
+<p> <strong>注</strong>：上面的命令'<strong>ps</strong>&lsquo;是&rsquo;<strong>grep</strong>&lsquo;命令的管道用于展示出我们需要的信息。</p>
+
+<p> <br/></p></li>
+<li><p><strong>kill命令</strong></p>
+
+<p> 从命令的名称你就会明白这个命令的用途。没错这个命令就是用于杀掉(kill)那些部相关的或者没有相应的进程的。这是一个非常有用的命令。你可又能已经习惯了Windows系统的频繁重启，因为Windows中的大部分进程是不能被杀的，即使杀掉了也需要系统重启才能生效;但这些在Linux中不会出现，在Linux中你可以杀死一个进程而不许要重启系统。</p>
+
+<p> 你需要一个进程的<strong>&lsquo;pid&rsquo;(ps)</strong>去杀掉这个进程。
+让我们展示如何使用"<strong>ps -A</strong>&ldquo;和&rdquo;<strong>grep</strong>&ldquo;命令查询我们想要结束的'apache2'进程，然后<strong>kill</strong>掉这个进程。</p>
+
+<pre><code>  root@belen:~# ps -A | grep -i apache2
+  1285 ?        00:00:00 apache2
+</code></pre>
+
+<p>  上面的例子找到了'apache2'进程的相关信息,&lsquo;apache2'进程的pid是'1285'。</p>
+
+<pre><code>  root@belen:~# kill 1285 (to kill the process apache2)
+</code></pre>
+
+<p>  <strong>注意</strong>：每次打开或者重启系统每个进程的pid都是不同的，你可以使用'ps'命令查看当前的进程PID。</p>
+
+<p>  另外一种kill进程的方式：</p>
+
+<pre><code>  root@belen:~# pkill apache2
+</code></pre>
+
+<p>  <strong>注意</strong>：'kill'命令需要脚本或者进程的id，而'pkill'入上面的例子你可以指定进程的所属进程命。</p>
+
+<p>  <br/></p></li>
+<li><p><strong>whereis命令</strong></p>
+
+<p> &ldquo;whereis"命令是用于定位二进制，源码和Manual Pages的位置命令。例如：</p>
+
+<pre><code> root@belen:~# whereis ls 
+ ls: /bin/ls /usr/share/man/man1/ls.1.gz
+
+ root@belen:~# whereis kill
+ kill: /bin/kill /usr/share/man/man2/kill.2.gz /usr/share/man/man1/kill.1.gz
+</code></pre>
+
+<p> <strong>注意</strong>：这个命令对于我们想编译二进制文件时确定位置是非常有用的。</p>
+
+<p> <br/></p></li>
+<li><p><strong>service命令</strong></p>
+
+<p> &ldquo;<strong>service</strong>"命令控制者服务的打开(Starting)，停止(Stopping),重启(Restarting)。这个命令可使服务在系统不重启的情况下start,restart或者stop。</p>
+
+<p> 在Ubuntu中启动apache2服务</p>
+
+<pre><code> root@belen:~# service apache2 start
+
+ * Starting web server apache2
+ apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+ httpd (pid 1285) already running
+ [ OK ]
+</code></pre>
+
+<p> 在Ubuntu中重启apache2服务</p>
+
+<pre><code> root@belen:~# service apache2 restart
+
+ * Restarting web server apache2                                                                                                                          
+ apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+ ... waiting .apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName  [ OK ] 
+</code></pre>
+
+<p> 在Ubuntu中停止apache2服务</p>
+
+<pre><code> root@belen:~# service apache2 stop
+
+ * Stopping web server apache2 
+ apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+ ... waiting     
+</code></pre>
+
+<p> <strong>注意</strong>：所有的进程脚本都存在于'<strong>/etc/init.d</strong>&lsquo;中，不同系统路径可能有差异;即，虽然你运行的是"service apache2 start"但实际"<strong>/etc/init.d/apache2 start</strong>&ldquo;要执行。</p>
+
+<p> <br/></p></li>
+<li><p><strong>alias命令</strong></p>
+
+<p> &ldquo;<strong>alias</strong>"是一个让你为一个较长的命令取别名的shell命令。
+我现在使用别名'l'代替命令'ls -l'命令的5个字符（包括空格）。</p>
+
+<pre><code>  root@belen:~# alias l='ls -l'
+</code></pre>
+
+<p>  检验'<strong>l</strong>&lsquo;命令是否正常执行。</p>
+
+<pre><code>  root@belen:~# l
+
+  total 36 
+  drwxr-xr-x 3 tecmint tecmint 4096 May 10 11:14 Binary 
+  drwxr-xr-x 3 tecmint tecmint 4096 May 21 11:21 Desktop 
+  drwxr-xr-x 2 tecmint tecmint 4096 May 21 15:23 Documents 
+  drwxr-xr-x 8 tecmint tecmint 4096 May 20 14:56 Downloads 
+  drwxr-xr-x 2 tecmint tecmint 4096 May  7 16:58 Music 
+  drwxr-xr-x 2 tecmint tecmint 4096 May 20 16:17 Pictures 
+  drwxr-xr-x 2 tecmint tecmint 4096 May  7 16:58 Public 
+  drwxr-xr-x 2 tecmint tecmint 4096 May  7 16:58 Templates 
+  drwxr-xr-x 2 tecmint tecmint 4096 May  7 16:58 Videos
+</code></pre>
+
+<p>  删除命令别名'l'使用'<strong>unalias</strong>&lsquo;。</p>
+
+<pre><code>  root@belen:~# unalias l
+</code></pre>
+
+<p>  检验'l'命令是否正常执行。</p>
+
+<pre><code>  root@belen:~# l
+  bash: l: command not found
+</code></pre>
+
+<p>  你可以使用别名命令找些乐子，也可以为某些重要的命令取些只有你知道的别名。</p>
+
+<pre><code>  alias cd='ls -l' (set alias of ls -l to cd)
+  alias su='pwd' (set alias of pwd to su)
+  ....
+  (You can create your own)
+  ....    
+</code></pre>
+
+<p>  现在如果有人在你的计算机上吃用'cd'命令，那么Ta将为打印出来的列表感到困惑;当使用'su'命令而看到当前目录时依然如此。当然你可以在不用时使用'<strong>unalias</strong>&lsquo;删除这些别名命令。</p>
+
+<p>  <br/></p></li>
+<li><p><strong>df命令</strong></p>
+
+<p> &ldquo;<strong>df</strong>"命令报告系统硬盘使用情况。改命令对于管理员或用户掌控硬盘使用情况非常的有用。</p>
+
+<pre><code> root@belen:~# df
+
+ Filesystem     1K-blocks    Used Available Use% Mounted on
+ /dev/sda1       47929224 7811908  37675948  18% /
+ none                   4       0         4   0% /sys/fs/cgroup
+ udev             1005916       4   1005912   1% /dev
+ tmpfs             202824     816    202008   1% /run
+ none                5120       0      5120   0% /run/lock
+ none             1014120     628   1013492   1% /run/shm
+ none              102400      44    102356   1% /run/user
+ /dev/sda5         184307   79852     94727  46% /boot
+ /dev/sda7       95989516   61104  91045676   1% /data
+ /dev/sda8       91953192   57032  87218528   1% /personal
+</code></pre>
+
+<p> 更多关于"df"的命令，请查看。</p>
+
+<p> <br/></p></li>
+<li><p><strong>du命令</strong></p>
+
+<p>估计文件空间使用情况。递归展示文件夹中文件使用磁盘的简要信息。</p>
+
+<pre><code>root@belen:~# du
+
+8       ./Daily Pics/wp-polls/images/default_gradient
+8       ./Daily Pics/wp-polls/images/default
+32      ./Daily Pics/wp-polls/images
+8       ./Daily Pics/wp-polls/tinymce/plugins/polls/langs
+8       ./Daily Pics/wp-polls/tinymce/plugins/polls/img
+28      ./Daily Pics/wp-polls/tinymce/plugins/polls
+32      ./Daily Pics/wp-polls/tinymce/plugins
+36      ./Daily Pics/wp-polls/tinymce
+580     ./Daily Pics/wp-polls
+1456    ./Daily Pics
+36      ./Plugins/wordpress-author-box
+16180   ./Plugins
+12      ./May Articles 2013/Xtreme Download Manager
+4632    ./May Articles 2013/XCache
+</code></pre>
+
+<p><strong>注意</strong>："df"用于报告文件系统的空间使用情况，而"du"主要报告目录内容。更多'du'命令，请查看。</p>
+
+<p><br/></p></li>
+<li><p><strong>rm命令</strong></p>
+
+<p>&ldquo;rm"命令用于删除文件或目录。</p>
+
+<p>删除目录</p>
+
+<pre><code>root@belen:~# rm 
+PassportApplicationForm_Main_English_V1.0
+rm: cannot remove 
+`PassportApplicationForm_Main_English_V1.0': Is a directory
+</code></pre>
+
+<p>仅仅使用"rm"命令不能删除目录，你需要在"rm"命令后追加"-rf"参数。</p>
+
+<pre><code>root@belen:~# rm -rf
+PassportApplicationForm_Main_English_V1.0   
+</code></pre>
+
+<p><strong>警告</strong>：如果你使用"<strong>rm -rf</strong>&ldquo;误删除了一个目录那么将是灾难性的。一旦你使用"rm -rf"删除一个目录那么将永久性的删除目录下面的所有文件。请谨慎操作。</p>
+
+<p><br/></p></li>
+<li><p><strong>echo命令</strong></p>
+
+<p>&ldquo;<strong>echo</strong>"顾名思义是纯文本输出命令。它不会操作shell命令，shell也不会读取输出的命令。然而，在一个交互性的脚本中，可以输出相关信息到命令终端。这在互动脚本中是一个非常有用的命令。</p>
+
+<pre><code>root@belen:~# echo "cooear.com is a very good website" 
+cooear.com is a very good website
+</code></pre>
+
+<p>创建一个简单的交互文本</p>
+
+<p>1.在桌面上创建一个interactive_shell.sh。（注意.sh的扩展是必须的）</p>
+
+<p>2.复制下面的内容到这个脚本中。</p>
+
+<pre><code>#!/bin/bash 
+echo "Please enter your name:" 
+read name
+echo "Welcome to Linux $name"
+</code></pre>
+
+<p>接下来，给这个脚本可执行权限并运行。</p>
+
+<pre><code>root@belen:~# chmod 777 interactive_shell.sh
+
+root@belen:~# ./interactive_shell.sh
+Please enter your name:
+Belen
+Welcome to Linux Belen  
+</code></pre>
+
+<p><strong>注意</strong>：'<strong>#!/bin/bash</strong>&lsquo;告诉shell这是一个脚本程序在shell脚本头部写上这行代码是非常必要的，'read'读取输入的值。</p>
+
+<p><br/></p></li>
+<li><p><strong>passwd命令</strong></p>
+
+<p>&ldquo;<strong>passwd</strong>"是在命令终端修改密码非常有用的命令。很明显为了安全起见你必须知道当前密码。</p>
+
+<pre><code>root@belen:~# passwd 
+
+Changing password for tecmint. 
+(current) UNIX password: ******** 
+Enter new UNIX password: ********
+Retype new UNIX password: ********
+Password unchanged   [Here was passowrd remians unchanged, i.e., new password=old password]
+Enter new UNIX password: #####
+Retype new UNIX password:#####
+</code></pre>
+
+<p><br/></p></li>
+<li><p><strong>lpr命令</strong></p>
+
+<p>&ldquo;<strong>lpr</strong>"将档案或是由标准输入送进来的资料送到打印机贮列之中，打印机管理程序 lpd 会在稍后将这个档案送给适当的程序或装置处理。lpr 可以用来将料资送给本地或是远端的主机来处理。</p>
+
+<pre><code>root@belen:~# lpr -P deskjet-4620-series 1-final.pdf
+</code></pre>
+
+<p><strong>注意</strong>："<strong>lpq</strong>&ldquo;命令让你查看打印机的状态(是否可用),以及正在等待中的打印任务。</p>
+
+<p><br/></p></li>
+<li><p><strong>cmp命令</strong></p>
+
+<p>&ldquo;<strong>cmp</strong>"比较两个文件的差异。默认情况下如果两个文件相同那么返回0;如果有差异则标示出第一个不同之处的字符和列数编号。</p>
+
+<p>file1.txt</p>
+
+<pre><code>root@belen:~# cat file1.txt
+Hi My name is Tecmint
+</code></pre>
+
+<p>file2.txt</p>
+
+<pre><code>root@belen:~# cat file2.txt
+Hi My name is tecmint [dot] com
+</code></pre>
+
+<p>现在比较两个文件的输出差异：</p>
+
+<pre><code>root@belen:~# cmp file1.txt file2.txt 
+file1.txt file2.txt differ: byte 15, line 1
+</code></pre>
+
+<p><br/></p></li>
+<li><p><strong>wget命令</strong></p>
+
+<p>&ldquo;<strong>wget</strong>"是一个免费的非交互是的下载工具(支持后台下载)，可用从web页面下载文件，支持HTTP,HTTPS,FTP协议和HTTP代理。</p>
+
+<p>使用wget下载ffmpeg</p>
+
+<pre><code>root@belen:~# wget http://downloads.sourceforge.net/project/ffmpeg-php/ffmpeg-php/0.6.0/ffmpeg-php-0.6.0.tbz2
+
+--2013-05-22 18:54:52--  http://downloads.sourceforge.net/project/ffmpeg-php/ffmpeg-php/0.6.0/ffmpeg-php-0.6.0.tbz2
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 216.34.181.59
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|216.34.181.59|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: http://kaz.dl.sourceforge.net/project/ffmpeg-php/ffmpeg-php/0.6.0/ffmpeg-php-0.6.0.tbz2 [following]
+--2013-05-22 18:54:54--  http://kaz.dl.sourceforge.net/project/ffmpeg-php/ffmpeg-php/0.6.0/ffmpeg-php-0.6.0.tbz2
+Resolving kaz.dl.sourceforge.net (kaz.dl.sourceforge.net)... 92.46.53.163
+Connecting to kaz.dl.sourceforge.net (kaz.dl.sourceforge.net)|92.46.53.163|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 275557 (269K) [application/octet-stream]
+Saving to: ‘ffmpeg-php-0.6.0.tbz2’
+
+100%[===========================================================================&gt;] 2,75,557    67.8KB/s   in 4.0s   
+
+2013-05-22 18:55:00 (67.8 KB/s) - ‘ffmpeg-php-0.6.0.tbz2’ saved [275557/275557]
+</code></pre>
+
+<p><br/></p></li>
+<li><p><strong>mount命令</strong></p>
+
+<p>&ldquo;<strong>mount</strong>"用于挂载那些在Linux系统中不能自动挂载的文件系统。使用该命令需要root权限。</p>
+
+<p>在你插入你的文件系统后，首先运行"lsblk"查看你的设备名称并记下他们的名称。</p>
+
+<pre><code>root@belen:~# lsblk 
+
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT 
+sda      8:0    0 931.5G  0 disk 
+├─sda1   8:1    0 923.6G  0 part / 
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0   7.9G  0 part [SWAP] 
+sr0     11:0    1  1024M  0 rom  
+sdb      8:16   1   3.7G  0 disk 
+└─sdb1   8:17   1   3.7G  0 part
+</code></pre>
+
+<p>从上面的代码可以清楚的看出我插入了一个4G的设备，因此'sdb1'是我要挂载的文件系统。切换到root用户将该设备挂载到常用的挂载目录'/dev'。</p>
+
+<pre><code>root@belen:~# su
+Password:   
+</code></pre>
+
+<p><p></p>
+    root@belen:~# cd /dev</p>
+
+<p>创建一个和挂载设备相关的目录名（便于以后查看）。</p>
+
+<pre><code>root@belen:~# mkdir usb
+</code></pre>
+
+<p>现在将文件系统'sdb1'挂载到目录'usb'。</p>
+
+<pre><code>root@belen:~# mount /dev/sdb1 /dev/usb
+</code></pre>
+
+<p>现在你可以从终端或者X-windows系统通过/dev/usb目录访问被挂载的目录了。</p>
+
+<p><br/></p></li>
+<li><p><strong>gcc命令</strong></p>
+
+<p>&ldquo;<strong>gcc</strong>"用于在Linux系统中编译'C'语言的程序。一个简单的'C'语言程序我们将它保存在桌面上命名为Hello.c(切记'.c'的扩展是必须的)。</p>
+
+<pre><code>#include 
+int main()
+{
+  printf("Hello world\n");
+  return 0;
+}
+</code></pre>
+
+<p>编译c程序</p>
+
+<pre><code>root@belen:~# gcc Hello.c
+</code></pre>
+
+<p>运行c程序</p>
+
+<pre><code>root@belen:~# ./a.out 
+Hello world 
+</code></pre>
+
+<p><strong>注意</strong>：上面的c程序在编译时会自动生成一个新文件"a.out",而你每次编译c程序都会生成一个同名的'a.out'覆盖前面的文件，因此在编译时指定一个输出文件是十分必要的。</p>
+
+<p>编译输出到指定文件</p>
+
+<pre><code>root@belen:~# gcc -o Hello Hello.c
+</code></pre>
+
+<p>这里'-o'让编译后生成'Hello'而非'a.out'文件。运行：</p>
+
+<pre><code>root@belen:~# ./Hello 
+Hello world
+</code></pre>
+
+<p><br/></p></li>
+<li><p><strong>g++命令</strong></p>
+
+<p>&ldquo;<strong>g++</strong>"用于编译"C++"第一个面向对象的编程语言。创建一个简单的c++程序，并在桌面上保存为Add.cpp(切记'.cpp'扩展是必须的)。</p>
+
+<pre><code>#include 
+
+using namespace std;
+
+int main() 
+    {
+          int a;
+          int b;
+          cout&lt;&lt;"Enter first number:\n";
+          cin &gt;&gt; a;
+          cout &lt;&lt;"Enter the second number:\n";
+          cin&gt;&gt; b;
+          cin.ignore();
+          int result = a + b;
+          cout&lt;&lt;"Result is"&lt;&lt;"  "&lt;
+     }     
+</code></pre>
+
+<p>编译：</p>
+
+<pre><code>root@belen:~# g++ Add.cpp
+</code></pre>
+
+<p>运行：</p>
+
+<pre><code>root@belen:~# ./a.out
+
+Enter first number: 
+...
+...
+</code></pre>
+
+<p><strong>注意</strong>：上面的c++程序在编译时会自动生成一个新文件"a.out",而你每次编译c++程序都会生成一个同名的'a.out'覆盖前面的文件，因此在编译时指定一个输出文件是十分必要的。</p>
+
+<p>编译到指定文件：</p>
+
+<pre><code>root@belen:~# g++ -o Add Add.cpp
+</code></pre>
+
+<p>运行：</p>
+
+<pre><code>root@belen:~# ./Add 
+
+Enter first number: 
+...
+...     
+</code></pre>
+
+<p><br/></p></li>
+<li><p><strong>java命令</strong></p>
+
+<p>Java是一个世界上广泛使用的编程语言而且快速,安全,可靠。当今的很多web服务都是基于java开发的。</p>
+
+<p>创建一个名字为belen.java的java程序（切记'.java'扩展是必须的）。</p>
+
+<pre><code>class belen {
+  public static void main(String[] arguments) {
+    System.out.println("Tecmint ");
+  }
+}
+</code></pre>
+
+<p>使用javac编译：</p>
+
+<pre><code>root@belen:~# javac belen.java
+</code></pre>
+
+<p>运行：</p>
+
+<pre><code>root@belen:~# java belen
+</code></pre>
+
+<p><strong>注意</strong>：几乎所欲的分支都包含路gcc编译器，大部分是g++编译器，当然有些是没有的。你可以使用apt或者yum命令安装某些必须的软件包。</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[12个非常有用的”df”命令查看Linux磁盘空间]]></title>
+    <link href="http://cooear.com/blog/2014/02/12ge-fei-chang-you-yong-de-df-ming-ling-cha-kan-linuxci-pan-kong-jian/"/>
+    <updated>2014-02-25T16:20:32+08:00</updated>
+    <id>http://cooear.com/blog/2014/02/12ge-fei-chang-you-yong-de-df-ming-ling-cha-kan-linuxci-pan-kong-jian</id>
+    <content type="html"><![CDATA[<p>　　你也许会在网上发现很用用于检查<strong>Linux</strong>磁盘空间的工具。然而，Linux拥有强大的内置磁盘空间检查工具"df"。"df"是"disk filesystem"的缩写，用于检查<strong>Linux</strong>系统上有效的可用磁盘空间。
+　　
+　　使用"-h"参数即(df -h)以对人友好的数据格式(kb,mb,GB)展示磁盘使用情况。这篇文章将用"df"命令全面的展示一种检查磁盘空间的方法。</p>
+
+<ol>
+<li><p>检查磁盘使用情况。</p>
+
+<p> &ldquo;df"命令显示设备名称，总数据块，总磁盘空间，使用的磁盘空间，可用的磁盘空间和挂载的文件系统节点。</p>
+
+<p> <!--more-->
+     [root@belen ~]# df</p>
+
+<pre><code> Filesystem           1K-blocks      Used Available Use% Mounted on
+ /dev/cciss/c0d0p2     78361192  23185840  51130588  32% /
+ /dev/cciss/c0d0p5     24797380  22273432   1243972  95% /home
+ /dev/cciss/c0d0p3     29753588  25503792   2713984  91% /data
+ /dev/cciss/c0d0p1       295561     21531    258770   8% /boot
+ tmpfs                   257476         0    257476   0% /dev/shm
+</code></pre></li>
+<li><p>显示磁盘使用情况的所有信息。</p>
+
+<p> 和上面类似，但它也显示了虚拟文件系统的信息以及所有文件系统的磁盘使用情况和内存利用率。</p>
+
+<pre><code> [root@belen ~]# df -a
+
+ Filesystem           1K-blocks      Used Available Use% Mounted on
+ /dev/cciss/c0d0p2     78361192  23186116  51130312  32% /
+ proc                         0         0         0   -  /proc
+ sysfs                        0         0         0   -  /sys
+ devpts                       0         0         0   -  /dev/pts
+ /dev/cciss/c0d0p5     24797380  22273432   1243972  95% /home
+ /dev/cciss/c0d0p3     29753588  25503792   2713984  91% /data
+ /dev/cciss/c0d0p1       295561     21531    258770   8% /boot
+ tmpfs                   257476         0    257476   0% /dev/shm
+ none                         0         0         0   -  /proc/sys/fs/binfmt_misc
+ sunrpc                       0         0         0   -  /var/lib/nfs/rpc_pipefs
+</code></pre></li>
+<li><p>以对人友好易都的格式显示磁盘使用情况。</p>
+
+<p> 你是否注意到上面显示的数据信息不易都，因为我们习惯于使用mb，gb等格式读取和记忆数据大小信息。</p>
+
+<p> &ldquo;df"命令使用&rdquo;-h"参数可用以对人友好和易都的格式显示磁盘使用情况（如: 1k 2M 3G）。</p>
+
+<pre><code> [root@belen ~]# df -h
+
+ Filesystem            Size  Used Avail Use% Mounted on
+ /dev/cciss/c0d0p2      75G   23G   49G  32% /
+ /dev/cciss/c0d0p5      24G   22G  1.2G  95% /home
+ /dev/cciss/c0d0p3      29G   25G  2.6G  91% /data
+ /dev/cciss/c0d0p1     289M   22M  253M   8% /boot
+ tmpfs  
+</code></pre></li>
+<li><p>显示/home目录下的文件系统信息</p>
+
+<pre><code> [root@belen ~]# df -hT /home
+
+ Filesystem      Type    Size  Used Avail Use% Mounted on
+ /dev/cciss/c0d0p5   ext3     24G   22G  1.2G  95% /home
+</code></pre></li>
+<li><p>以字节(Bytes)的形式展示文件系统信息。</p>
+
+<pre><code> [root@belen ~]# df -k
+
+ Filesystem           1K-blocks      Used Available Use% Mounted on
+ /dev/cciss/c0d0p2     78361192  23187212  51129216  32% /
+ /dev/cciss/c0d0p5     24797380  22273432   1243972  95% /home
+ /dev/cciss/c0d0p3     29753588  25503792   2713984  91% /data
+ /dev/cciss/c0d0p1       295561     21531    258770   8% /boot
+ tmpfs                   257476         0    257476   0% /dev/shm
+</code></pre></li>
+<li><p>以MB的形式展示文件系统信息。</p>
+
+<pre><code> [root@belen ~]# df -m
+
+ Filesystem           1M-blocks      Used Available Use% Mounted on
+ /dev/cciss/c0d0p2        76525     22644     49931  32% /
+ /dev/cciss/c0d0p5        24217     21752      1215  95% /home
+ /dev/cciss/c0d0p3        29057     24907      2651  91% /data
+ /dev/cciss/c0d0p1          289        22       253   8% /boot
+ tmpfs                      252         0       252   0% /dev/shm
+</code></pre></li>
+<li><p>以GB的形式展示文件系统信息。</p>
+
+<pre><code> [root@belen ~]# df -h
+
+ Filesystem            Size  Used Avail Use% Mounted on
+ /dev/cciss/c0d0p2      75G   23G   49G  32% /
+ /dev/cciss/c0d0p5      24G   22G  1.2G  95% /home
+ /dev/cciss/c0d0p3      29G   25G  2.6G  91% /data
+ /dev/cciss/c0d0p1     289M   22M  253M   8% /boot
+ tmpfs                 252M     0  252M   0% /dev/shm
+</code></pre></li>
+<li><p>展示文件系统索引节点。</p>
+
+<p> &ldquo;df"使用&rdquo;-i"参数显示文件系统已经使用的索引信息和百分比。</p>
+
+<pre><code> root@tecmint ~]# df -i
+
+ Filesystem            Inodes   IUsed   IFree IUse% Mounted on
+ /dev/cciss/c0d0p2    20230848  133143 20097705    1% /
+ /dev/cciss/c0d0p5    6403712  798613 5605099   13% /home
+ /dev/cciss/c0d0p3    7685440 1388241 6297199   19% /data
+ /dev/cciss/c0d0p1      76304      40   76264    1% /boot
+ tmpfs                  64369       1   64368    1% /dev/shm
+</code></pre></li>
+<li><p>展示文件类型。</p>
+
+<pre><code> [root@belen ~]# df -T
+
+ Filesystem      Type   1K-blocks  Used      Available Use% Mounted on
+ /dev/cciss/c0d0p2   ext3    78361192  23188812  51127616  32%   /
+ /dev/cciss/c0d0p5   ext3    24797380  22273432  1243972   95%   /home
+ /dev/cciss/c0d0p3   ext3    29753588  25503792  2713984   91%   /data
+ /dev/cciss/c0d0p1   ext3    295561     21531    258770    8%    /boot
+ tmpfs           tmpfs   257476         0    257476    0%   /dev/shm
+</code></pre>
+
+<p> 从上面的输出你可以看到并没有文件类型的信息，当你使用"-T"可以查看相关的文件类型。</p></li>
+<li><p>展示特定的文件类型。</p>
+
+<p>如果你想只显示特定的文件类型可以使用"-t"参数。例如：</p>
+
+<pre><code>[root@belen ~]# df -t ext3
+
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/cciss/c0d0p2     78361192  23190072  51126356  32% /
+/dev/cciss/c0d0p5     24797380  22273432   1243972  95% /home
+/dev/cciss/c0d0p3     29753588  25503792   2713984  91% /data
+/dev/cciss/c0d0p1       295561     21531    258770   8% /boot
+</code></pre></li>
+<li><p>展示排除特定的文件类型。</p>
+
+<pre><code>[root@belen ~]# df -x ext3
+
+Filesystem           1K-blocks      Used Available Use% Mounted on
+tmpfs                   257476         0    257476   0% /dev/shm
+</code></pre></li>
+<li><p>&ldquo;df"命令的帮助信息。</p>
+
+<pre><code>[root@belen ~]# df --help
+
+Usage: df [OPTION]... [FILE]...
+Show information about the file system on which each FILE resides,
+or all file systems by default.
+
+Mandatory arguments to long options are mandatory for short options too.
+-a, --all             include dummy file systems
+-B, --block-size=SIZE use SIZE-byte blocks
+-h, --human-readable  print sizes in human readable format (e.g., 1K 234M 2G)
+-H, --si              likewise, but use powers of 1000 not 1024
+-i, --inodes          list inode information instead of block usage
+-k                    like --block-size=1K
+-l, --local           limit listing to local file systems
+--no-sync         do not invoke sync before getting usage info (default)
+-P, --portability     use the POSIX output format
+--sync            invoke sync before getting usage info
+-t, --type=TYPE       limit listing to file systems of type TYPE
+-T, --print-type      print file system type
+-x, --exclude-type=TYPE   limit listing to file systems not of type TYPE
+-v                    (ignored)
+--help     display this help and exit
+--version  output version information and exit
+
+SIZE may be (or may be an integer optionally followed by) one of following:
+kB 1000, K 1024, MB 1000*1000, M 1024*1024, and so on for G, T, P, E, Z, Y.
+
+Report bugs to .
+</code></pre>
+
+<p>　　</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux下scp语法命令具体实例总结]]></title>
+    <link href="http://cooear.com/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie/"/>
+    <updated>2013-08-03T15:13:58+08:00</updated>
+    <id>http://cooear.com/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie</id>
+    <content type="html"><![CDATA[<p>　　<strong>scp</strong>就是secure copy可以简单的理解为是利用SSH协议来传输数据的cp命令，使用和ssh相同的认证方式，提供相同的安全保证 。但是两者的区别在于cp命令是在同一台物理主机上使用的，而scp则可以在两台不同的物理主机上传输文件数据。</p>
+
+<p><strong>SCP</strong>命令语法:</p>
+
+<pre><code>scp [-1245BCpqrv] [-c cipher] [F ssh_config] [-I identity_file] [-l limit] [-o ssh_option] [-P port] [-S program] [[user@]host1:] file1 […] [[suer@]host2:]file2
+</code></pre>
+
+<p>scp可选参数：</p>
+
+<!--more-->
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">相关参数</th>
+<th style="text-align:center;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">-v</td>
+<td style="text-align:center;">和大多数 linux 命令中的 -v 意思一样 , 用来显示进度 . 可以用来查看连接 , 认证 , 或是配置错误 .</td>
+</tr>
+<tr>
+<td style="text-align:center;">-C</td>
+<td style="text-align:center;">使能压缩选项</td>
+</tr>
+<tr>
+<td style="text-align:center;">-P</td>
+<td style="text-align:center;"> 选择端口 . 注意 -p 已经被 rcp 使用 .</td>
+</tr>
+<tr>
+<td style="text-align:center;">-4</td>
+<td style="text-align:center;"> 强行使用 IPV4 地址 . </td>
+</tr>
+<tr>
+<td style="text-align:center;">-6</td>
+<td style="text-align:center;">强行使用 IPV6 地址 .</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>scp是linux下的远程拷贝</p>
+
+<p>命令：</p>
+
+<ol>
+<li><p>将本地文件拷贝到远程：scp  文件名 用户名@计算机IP或者计算机名称:远程路径</p>
+
+<pre><code> scp local_file remote_username@remote_ip:remote_folder
+</code></pre></li>
+<li><p>从远程将文件拷回本地：scp  用户名@计算机IP或者计算机名称:文件名 本地路径</p>
+
+<pre><code> scp remote_username@remote_ip:remote_folder local_file
+</code></pre></li>
+<li><p>将本地目录拷贝到远程：scp -r 目录名   用户名@计算机IP或者计算机名称:远程路径</p>
+
+<pre><code> scp -r local_folder remote_username@remote_ip:remote_dir
+</code></pre></li>
+<li><p>从远程将目录拷回本地：scp -r   用户名@计算机IP或者计算机名称:目录名本地路径</p>
+
+<pre><code> scp -r remote_username@remote_ip:remote_folder local_dir
+</code></pre></li>
+</ol>
+
+
+<p>　　另外，作为网站管理员会经常涉及两天计算机间的文件传输，如：数据文件的异地备份，但作为脚本又不可能自己输入scp的用户密码，故总结了一下两张方法：</p>
+
+<ul>
+<li><p>方法一:</p>
+
+<pre><code>  sshpass -p 'password' scp file.gz root@xxx.xxx.xxx.1:/backup
+</code></pre></li>
+<li><p>方法二:</p>
+
+<pre><code>  #!/usr/bin/expect
+  spawn scp  backup.sql.gz root@remote_ip:remote_folder
+  set pass "password"
+  expect {
+      password: {send "$pass\r"; exp_continue}
+  }   
+</code></pre></li>
+<li><p>执行这个脚本</p>
+
+<pre><code>  expect send_file.exp
+</code></pre></li>
+</ul>
+
+
+<p><br /><br /></p>
+
+<hr />
+
+<p><strong>注</strong>:网上还普遍有一种方法“建立两台计算机之间的安全信任关系”这样在脚本执行scp时也可不输入密码，但cooear不太喜欢这种方法所有没有介绍，需要的可以自行Google。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux中10个有用的链接操作示例]]></title>
+    <link href="http://cooear.com/blog/2013/02/linuxzhong-10ge-you-yong-de-lian-jie-cao-zuo-shi-li/"/>
+    <updated>2013-02-20T00:01:08+08:00</updated>
+    <id>http://cooear.com/blog/2013/02/linuxzhong-10ge-you-yong-de-lian-jie-cao-zuo-shi-li</id>
+    <content type="html"><![CDATA[<p>Linux中的链接命令意味着几个命令联合在一起使用，他们在执行命令时依据彼此之间执行的结果。Linux中的链接命令就像你使用shell语言写的能在命令行中直接执行的shell脚本。链接命令是程序的自动化成为可能。此外，在链接命令的作用下一台无人操作的机器可以有序的运行多个系统。</p>
+
+<p>本文旨在对常用的链接命(command­-chaining)令通过简要分析描述和相应的例子来提高我们码代码的能力，使我们能够写出更精炼更高效的代码从而降低系统负载。</p>
+
+<!--more-->
+
+
+<ol>
+<li><p><strong>&amp;符号</strong></p>
+
+<p> <strong>‘&amp;’</strong>符号作用是使命令可以后台运行而不中断执行。在命令行终端中键入下面命令并以空格和<strong>&lsquo;&amp;&rsquo;</strong>符号隔开。另外，你可以一行执行多个后台命令。</p>
+
+<p> 后台执行1条命令如下：</p>
+
+<pre><code> belen@localhost:~$ ping -c3 www.cooear.com &amp;
+</code></pre>
+
+<p> 后台同时执行2条命令如下：</p>
+
+<pre><code> root@localhost:/home/belen# apt-get update &amp; apt-get upgrade &amp;
+</code></pre></li>
+<li><p><strong>分号命令(;)</strong></p>
+
+<p> 分号命令是为了使在一行中执行的多个命令可以有序的单独执行。</p>
+
+<pre><code> root@localhost:/home/belen# apt-get update ; apt-get upgrade ; mkdir test
+</code></pre>
+
+<p> 上面一块执行的命令中地一个执行<strong>update</strong>命令，然后执行<strong>upgrade</strong>命令最后执行在当前目录下创建‘test’目录的命令。</p></li>
+<li><p><strong>&amp;&amp;符号命令</strong></p>
+
+<p> <strong>&amp;&amp;</strong>命令只有在地一个命令执行成功后才会执行第二个命令，即只有第一个命令的退出状态为1时。这个命令对于检查最后一个命令的执行状态非常有用。</p>
+
+<p> 例如，我想访问网站 <strong>cooear.com</strong>于是使用命令行访问，在访问前我需要先检查下网站所在主机是否可以正常访问。</p>
+
+<pre><code> root@localhost:/home/belen# ping -c3 www.cooear.com &amp;&amp; links www.cooear.com
+</code></pre></li>
+<li><p><strong>||符号命令</strong></p>
+
+<p> 或命令(<strong>OR Operator</strong>)和程序中的‘<strong>else</strong>’类似。上面的命令告诉我们只有在第一个命令正确执行后才能执行第二个命令，即第一个命令的退出状态值为‘1’。</p>
+
+<p> 例如，当我们想使用非root用户执行'apt-get update'，当第一个命令执行失败再执行第二个名'links www.cooear.com'时可以使用下面的代码。</p>
+
+<pre><code> belen@localhost:~$ apt-get update || links cooear.com
+</code></pre>
+
+<p> 上面的命令因为当前用户不能执行系统的<strong>update</strong>操作，所以第一个命令执行失败因此最后一个命令'<strong>links cooear.com</strong>&lsquo;被执行</p>
+
+<pre><code> belen@localhost:~$ mkdir test || links cooear.com   
+</code></pre></li>
+<li><p><strong>!符号命令</strong></p>
+
+<p> <strong>!</strong>符合命令(<strong>NOT Operator</strong>)和程序中的'<strong>except</strong>&lsquo;类似。这个命令将执行所有除了提供的条件。为了更好的理解我们将在你的home目录创建目录'belen'然后‘<strong>cd</strong>’到该目录。</p>
+
+<pre><code> belen@localhost:~$ mkdir belen 
+ belen@localhost:~$ cd belen
+</code></pre>
+
+<p> 接下来在'belen'目录中创建各种类型的文件。</p>
+
+<pre><code> belen@localhost:~/belen$ touch a.doc b.doc a.pdf b.pdf a.xml b.xml a.html b.html
+</code></pre>
+
+<p> 我们已经在'belen'目录中创建了各种文件。</p>
+
+<pre><code> belen@localhost:~/belen$ ls 
+ a.doc  a.html  a.pdf  a.xml  b.doc  b.html  b.pdf  b.xml        
+</code></pre>
+
+<p> 现在使用一种简单的方法删除除'html'结尾的所有文件。</p>
+
+<pre><code> belen@localhost:~/belen$ rm -r !(*.html)
+</code></pre>
+
+<p> 最后为了验证结果，在命令行中执行ls 命令列出所有的文件列表。</p>
+
+<pre><code> belen@localhost:~/belen$ ls 
+ a.html  b.html      
+</code></pre></li>
+<li><p><strong>AND-OR 符号命令(&amp;&amp; – ||)</strong></p>
+
+<p> 当前符号命令(<strong>AND-OR operator</strong>)是使用'AND'(<strong>&amp;&amp;</strong>)和'OR'(<strong>||</strong>)结合的命令，这个命令和if-else类似。</p>
+
+<p> 例如，我们执行ping <strong>cooear.com</strong>，如果成功则输出'<strong>Verified</strong>&lsquo;否则输出'Host Down'。</p>
+
+<pre><code> belen@localhost:~/belen$ ping -c3 www.cooear.com &amp;&amp; echo "Verified" || echo "Host Down"
+</code></pre>
+
+<p> 代码输出：</p>
+
+<pre><code> PING www.cooear.com (220.181.136.225) 56(84) bytes of data. 
+ 64 bytes from www.cooear.com (220.181.136.225): icmp_req=1 ttl=55 time=216 ms 
+ 64 bytes from www.cooear.com (220.181.136.225): icmp_req=2 ttl=55 time=224 ms 
+ 64 bytes from www.cooear.com (220.181.136.225): icmp_req=3 ttl=55 time=226 ms 
+
+ --- www.cooear.com ping statistics --- 
+ 3 packets transmitted, 3 received, 0% packet loss, time 2001ms 
+ rtt min/avg/max/mdev = 216.960/222.789/226.423/4.199 ms 
+ Verified    
+</code></pre>
+
+<p> 现在断开你的网络连接执行同样的命令试试。</p>
+
+<pre><code> belen@localhost:~/belen$ ping -c3 www.cooear.com &amp;&amp; echo "verified" || echo "Host Down"
+</code></pre>
+
+<p> 代码输出：</p>
+
+<pre><code> ping: unknown host www.tecmint.com 
+ Host Down           
+</code></pre></li>
+<li><p><strong>管道符号命令(|)</strong></p>
+
+<p> 当我们想将上一个输出的命令作为下一个命令的输入值时那么管道命令(|)将是十分有用的。例如，将'<strong>ls -l</strong>&lsquo;输出的值通过管道命令传给<strong>less</strong>命令。</p>
+
+<pre><code> belen@localhost:~$ ls -l | less
+</code></pre></li>
+<li><p><strong>组合符号命令{}</strong></p>
+
+<p> 两个或者更多的命令联合执行，第二个命令的执行依据第一个命令的执行结果。</p>
+
+<p> 例如，检查我的'Downloads'目录下是否存在文件'xyz.txt'和'xyz1.txt'，并输出相应的结果。</p>
+
+<pre><code> belen@localhost:~$ [ -f /home/belen/Downloads/xyz.txt ] || echo "The file does not exist"
+ belen@localhost:~$ [ -f /home/belen/Downloads/xyz1.txt ] || echo "The file does not exist" 
+ "The file does not exist"
+</code></pre></li>
+<li><p><strong>优先执行符号命令()</strong></p>
+
+<p> 这个符号()允许命令按照一定的优先级执行。</p>
+
+<pre><code> Command_x1 &amp;&amp; Command_x2 || Command_x3 &amp;&amp; Command_x4.
+</code></pre>
+
+<p> 上面的命令如果<strong>Command_x1</strong>执行失败会怎样？<strong>Command_x2</strong>,<strong>Command_x3</strong>,<strong>Command_x4</strong>这个几个命令一个也不会执行，因此我们应该使用优先执行符号：</p>
+
+<pre><code> (Command_x1 &amp;&amp; Command_x2) || (Command_x3 &amp;&amp; Command_x4)
+</code></pre>
+
+<p> 上面这个命令即使<strong>Command_x1</strong>和<strong>Command_x2</strong>都执行失败，<strong>Command_x3</strong>和<strong>Command_x4</strong>也会根据<strong>Command_x3</strong>的退出状态执行</p></li>
+<li><p><strong>Concatenation Operator ()</strong></p>
+
+<p>The Concatenation Operator () as the name specifies, is used to concatenate large commands over several lines in the shell. For example, The below command will open text file test(1).txt.</p>
+
+<pre><code>belen@localhost:~/Downloads$ nano test\(1\).txt
+</code></pre></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

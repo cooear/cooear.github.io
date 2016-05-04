@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://cooear.github.io/sitemap.xml 
+Sitemap: http://cooear.com/sitemap.xml 

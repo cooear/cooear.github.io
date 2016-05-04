@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Linux日志系统浅析 - 酷耳</title>
+  <meta name="author" content="cooear">
+
+  <meta name="description" content="Linux日志系统深度剖析，快速了解系统中个类服务如：auth、dmesg、xferlog、cron等，定位解决系统中各种问题。">
+  <meta name="keywords" content="Liunx, 日志分析, debug, auth.log,系统日志">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cooear.com/blog/2013/08/linuxri-zhi-xi-tong-qian-xi/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="酷耳" type="application/atom+xml">
+
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://cooear.com/blog/2013/08/linuxri-zhi-xi-tong-qian-xi/">
+  <meta property="og:title" content="Linux日志系统浅析 - 酷耳">
+  <meta property="og:description" content="Linux日志系统深度剖析，快速了解系统中个类服务如：auth、dmesg、xferlog、cron等，定位解决系统中各种问题。">
+
+  <meta name="baidu-site-verification" content="1Lwtt89368" />
+<script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function addBlankTargetForLinks () {
+	  $('a[href^="http"]').each(function(){
+	      $(this).attr('target', '_blank');
+	  });
+	}
+
+	$(document).bind('DOMNodeInserted', function(event) {
+	  addBlankTargetForLinks();
+	});	
+</script>
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">酷耳</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/about/">About</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="cooear.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="酷耳" />
+    <meta itemprop="description" content="编程，扯淡，再编程。" />
+    <meta itemprop="url" content="http://cooear.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-23T15:47:25+08:00"  data-updated="true" itemprop="datePublished dateCreated">2013-08-23</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Linux日志系统浅析
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><p>　　当我们使用的Linux系统正常运行时，花费一些时间去学习和了解Linux的日志系统/var/log 还是很有必要的;因为当你了解路Linux的日志系统时当服务器或者某项服务运行不正常时可以很方便的通过日志定位问题所在,所以正确的设置Linux的日志输出可以达到事半功倍的效果。通常情况下你可以使用less、more、cat、vi、grep或者tail命令来查看log文件的内容。</p>
+
+<p>定义：</p>
+
+<p>　　<strong>log files:UNIX/LINUX</strong>有一个严格的政策不报告错误消息到用户界面即使可能没有用户在阅读这些消息。而错误消息的交互命令发送到终端屏幕、错误或信息消息产生的非交互式命令是“记录”的文件在目录<strong>/var/log/</strong>;日志文件在<strong>/var/log</strong>通常可以无限增长,可能需要定期清洗。
+　　</p>
+
+<!--more-->
+
+
+<ul>
+<li>/var/log/auth.log</li>
+</ul>
+
+
+<p>　　记录所有正常用户和系统进程的所有登录、登出.</p>
+
+<ul>
+<li>/var/log/btmp</li>
+</ul>
+
+
+<p>　　记录错误的登录尝试，执行lastb命令可以查看到最后一个不成功的登录尝试.</p>
+
+<ul>
+<li>/var/log/debug</li>
+</ul>
+
+
+<p>　　Debugging output from various packages.</p>
+
+<ul>
+<li>/var/log/dmesg</li>
+</ul>
+
+
+<p>　　内核环缓冲区,此文件的内容是指由dmesg命令。</p>
+
+<ul>
+<li>/var/log/gdm/</li>
+</ul>
+
+
+<p>　　GDM log files. Normally a subset of the last X log file. See /var/log/xdm.log for mode details.</p>
+
+<ul>
+<li>/var/log/wtmp</li>
+</ul>
+
+
+<p>　　该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件。因此随着系统正常 运行时间的增加，该文件的大小也会越来越大，增加的速度取决于系统用户登录的次数。该日志文件可以用来查看用户的登录记录，last命令就通过访问这个文 件获得这些信息，并以反序从后向前显示用户的登录记录，last也能根据用户、终端 tty或时间显示相应的记录。</p>
+
+<ul>
+<li>/var/log/xferlog</li>
+</ul>
+
+
+<p>　　该日志文件记录FTP会话，可以显示出用户向FTP服务器或从服务器拷贝文件的记录。该文件会显示用户拷贝到服务器上的用来入侵服务器的恶意程序，以及该用户拷贝了哪些文件供他使用。</p>
+
+<ul>
+<li>/var/log/boot.log</li>
+</ul>
+
+
+<p>　　该文件记录系统在引导过程中发生的事件，就是Linux系统开机自检过程显示的信息。</p>
+
+<ul>
+<li>/var/log/cron</li>
+</ul>
+
+
+<p>　　该日志文件记录crontab守护进程crond所派生的子进程的动作，无论crontab(或crond)开始执行一个job该日志都将记录.</p>
+
+<ul>
+<li>/var/log/maillog</li>
+</ul>
+
+
+<p>　　该日志文件记录服务器上mail服务的所有活动(邮件的发出和接收);它可以用来查看用户使用哪个系统发送工具或把数据发送到哪个系统.</p>
+
+<ul>
+<li>/etc/rsyslog.conf</li>
+</ul>
+
+
+<p>　　controls what goes inside some of the log files. For example, following is the entry in rsyslog.conf for /var/log/messages.</p>
+
+<pre><code>$ grep "/var/log/messages"                  /etc/rsyslog.conf
+*.info;mail.none;authpriv.none;cron.none      /var/log/messages　　
+</code></pre>
+
+<p>　　</p>
+
+<ul>
+<li>/var/log/lastlog</li>
+</ul>
+
+
+<p>　　记录最近成功登录的事件和最后一次不成功的登录事件,该文件是二进制文件，需要使用 lastlog命令查看.</p>
+
+<ul>
+<li>/var/log/syslog</li>
+</ul>
+
+
+<p>　　The &lsquo;system&rsquo; log file. The contents of this file is managed via the syslogd daemon which more often than not takes care of all log manipulation on most systems.</p>
+
+<ul>
+<li>/var/log/xdm.log</li>
+</ul>
+
+
+<p>　　XDM log file. Normally subset of the last X startup log and pretty much useless in light of the details the X logs is able to provide us with. Only consult this file if you have XDM specific issues otherwise just use the X logfile.</p>
+
+<ul>
+<li>/var/log/secure：</li>
+</ul>
+
+
+<p>　　记录登入系统存取资料的日志，例如 pop3, ssh, telnet, ftp 等都都会记录在次日志文件中。
+　　</p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">cooear</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-08-23T15:47:25+08:00"  data-updated="true" itemprop="datePublished dateCreated">2013-08-23</time>
+          
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  
+  
+  
+  <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=2017486" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1396499123021149" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2013/08/linuxri-zhi-xi-tong-qian-xi" data-title="Linux日志系统浅析" data-url="http://cooear.com/blog/2013/08/linuxri-zhi-xi-tong-qian-xi/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"cooear"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2013/08/linuxxia-scpyu-fa-ming-ling-ju-ti-shi-li-zong-jie/" title="Previous Post: Linux下scp语法命令具体实例总结">&laquo; Linux下scp语法命令具体实例总结</a></li>
+            
+            
+            <li class="next"><a href="/blog/2013/08/linuxti-chu-zai-xian-yong-hu/" title="Next Post: linux踢出在线用户">linux踢出在线用户 &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/">20个比较高级的Linux命令</a>
+    
+    <a class="list-group-item " href="/blog/2016/04/guo-wai-dnsfu-wu-qi-lie-biao/">国外DNS服务器列表</a>
+    
+    <a class="list-group-item " href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">OpenWrt使用ShadowSocks透明代理智能翻墙上网</a>
+    
+    <a class="list-group-item " href="/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern(灯笼)安装和使用教程</a>
+    
+    <a class="list-group-item " href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">GAE(Google App Engine)+goagent+chrome浏览器+switchysharp图文教程</a>
+    
+  </div>
+</section>
+
+
+
+
+
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 145%" href="/tags/vpn/">VPN</a>
+<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
+<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
+<a style="font-size: 125%" href="/tags/fan-qiang/">翻墙</a>
+<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 90%" href="/tags/gae/">GAE</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
+<a style="font-size: 125%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 145%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 90%" href="/tags/google/">Google</a>
+<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 125%" href="/tags/gmail/">Gmail</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
+<a style="font-size: 180%" href="/tags/linux/">Linux</a>
+
+  </ul>
+</section>
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2016 - cooear<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> & <a href="http://cooear.com">酷耳</a></span>.
+      <!--<span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.-->
+  </small>
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?a8e2bd164d0f4e6ce26d50a36471c121";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+</p>
+
+</div>
+</footer>
+    
+
+
+
+
+
+
+
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
+
+
+  </body>
+</html>
