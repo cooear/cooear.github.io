@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: VPN | 酷耳]]></title>
   <link href="http://cooear.com/tags/vpn/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-05T17:18:30+08:00</updated>
+  <updated>2016-05-05T17:21:35+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -253,9 +253,9 @@ stop() {
 
 <h2>安装教程</h2>
 
-<h3>1、首先你必须确定你已经安装好谷歌的Chrome浏览器，否则<strong>Lantern</strong>无法启动.</h3>
+<h3>一、首先你必须确定你已经安装好谷歌的Chrome浏览器，否则<strong>Lantern</strong>无法启动.</h3>
 
-<h3>2、下载你系统对应的客户端程序，安装<strong>Lantern</strong>.</h3>
+<h3>二、下载你系统对应的客户端程序，安装<strong>Lantern</strong>.</h3>
 
 <p><a href="http://pan.baidu.com/s/1jG412Fs">Windows</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1hq5R2uC">Mac</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1i3iORzR">Linux</a></p>
 
@@ -267,7 +267,7 @@ stop() {
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2014/08/20131123054656thw4v.jpeg" title="Lantern 安装完成" alt="Lantern 安装完成" /></p>
 
-<h3>3、帐号设置和连接网络.</h3>
+<h3>三、帐号设置和连接网络.</h3>
 
 <p><strong>3.1</strong> 使用gmail账号登入，如图：</p>
 
@@ -313,7 +313,7 @@ stop() {
 
 <p> <img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146243754102.png" title="Lantern 最新代理设置" alt="Lantern 最新代理设置" /></p>
 
-<p> <strong> 4、</strong> 浏览器代理设置(以chrome为例)</p>
+<p> <strong> 四、</strong> 浏览器代理设置(以chrome为例)</p>
 
 <p>　　装有switchysharp扩展的话，可以直接选择 【使用系统代理设置】；可以暂时停用switchysharp还可以在switchysharp【选项】【新建情景模式】，选择【自动配置】，在Url处填入你自己在<strong>Lantern</strong>获得pac文地址,切换到<strong>Lantern</strong>模式。如图：</p>
 
@@ -321,7 +321,7 @@ stop() {
 
 <p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/4.png" title="Lantern 的Chrome switchysharp设置" alt="Lantern 的Chrome switchysharp设置" /></p>
 
-<p> <strong>5. Lantern</strong>设置成功，顺利浏览<strong>Youtube</strong>，如图：</p>
+<p> <strong>五. Lantern</strong>设置成功，顺利浏览<strong>Youtube</strong>，如图：</p>
 
 <p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/66.png" title="Lantern 顺利翻墙" alt="Lantern 顺利翻墙" /></p>
 
