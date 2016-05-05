@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SwitchyOmega Chrome浏览器安装配置 - 酷耳</title>
+  <meta name="author" content="cooear">
+
+  
+  <meta name="description" content="SwitchyOmega配合GFWList 项目使用的场合，主要介绍Goagent+Chrome+SwitchyOmega使用教程最新版，SwitchyOmega是原来的SwitchySharp的升级版2代。">
+  <meta name="keywords" content="VPN, Lantern, SwitchyOmega, switchysharp, Proxy SwitchyOmega, GFW, XX-Net, GoAgent, SwitchyOmega浏览器配置">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cooear.com/blog/2014/05/switchyomega-configuration/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="酷耳" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function addBlankTargetForLinks () {
+	  $('a[href^="http"]').each(function(){
+	      $(this).attr('target', '_blank');
+	  });
+	}
+
+	$(document).bind('DOMNodeInserted', function(event) {
+	  addBlankTargetForLinks();
+	});	
+</script>
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">酷耳</a></h1>
+  
+    <h2>临渊羡鱼 不如退而结网.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="cooear.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">SwitchyOmega Chrome浏览器安装配置</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-05T10:49:58+08:00'><span class='date'>2014-05-05</span> <span class='time'>10:49 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>一、安装SwitchyOmega</h3>
+
+<p>首先你需要安装 SwitchyOmega。<a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif/?hl=zh">SwitchyOmega</a>可以在谷歌应用商店安装。</p>
+
+<ul>
+<li>如果因为网络问题安装失败，您也可以直接<a href="https://github.com/FelisCatus/SwitchyOmega/releases">在 Github 上下载最新版安装包</a>，然后按照下载页面上的说明手动安装。</li>
+</ul>
+
+
+<p>安装完毕后应该会自动打开选项页面，之后按以下说明操作即可。</p>
+
+<h3>二、导入备份</h3>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164651.png" title="SwitchyOmega 安装" alt="SwitchyOmega 安装" /></p>
+
+<!--more-->
+
+
+<p>这里有一段介绍性的教程。如果想了解SwitchyOmega的不妨跟着教程走一遍。如果急着设置好的话，还是点跳过吧  。（阅览教程与否不影响接下来的步骤。）</p>
+
+<p>按照下图，在导入导出页面点击“从备份文件恢复”。那么问题就来了，已经配置好的设置备份文件哪家强？SwitchyOmega项目组找FelisCatus！<a href="https://raw.githubusercontent.com/wiki/FelisCatus/SwitchyOmega/GFWList.bak">我这里有提供备份文件，大家可以自己下载使用</a>。假如打开来是个网页怎么办？右键另存为呗。此外如果曾经在SwitchySharp里配置过了，直接用SwitchySharp导出的备份文件也行的，不过要记得按照此页面最下方的说明，更改一下规则列表的网址</p>
+
+<p>图中第三步会打开一个选择文件的对话框，这时候选择刚下载好的备份文件就行了。</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164652.png" title="SwitchyOmega 导入/导出" alt="SwitchyOmega 导入/导出" /></p>
+
+<h3>三、设置代理服务器</h3>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164653.png" title="SwitchyOmega 配置" alt="SwitchyOmega 配置" /></p>
+
+<p>这部分比较简单，在“GFWed”情景模式设置好代理协议和端口就好了。再一次说明，请仔细阅读您所使用的代理软件说明书，尤其是不要填错了代理协议（常见的有HTTP或SOCKS），因为那个填错了有一大堆问题，程序还不会提示你填错了。</p>
+
+<p>虽然我已经说过很多次了， <strong>但如果你还没有代理服务器，那你要 SwitchyOmega 干嘛呢？</strong>你需要去弄一个代理服务器/代理软件，然后先把代理运行起来再说。什么？哪里有免费的代理服务器？这和我又有什么关系呢？ SwitchyOmega 的作用只是告诉 Chrome 应该使用什么代理，配置哪些网址用哪些代理而已。 SwitchyOmega 不是翻墙软件，也没有义务提供免费的代理服务器或是帮你翻墙。</p>
+
+<h3>四、更新规则列表</h3>
+
+<p>GFWList 项目是一个经常更新的项目，提供的规则列表也是需要定期下载更新的。还好 SwitchyOmega 项目有提供自动下载功能，可以应对变化迅速的网络环境。不过，既然马上就要用来上网，那自然是要<strong>手动进行首次下载的</strong>，对不对？</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164654.png" title="SwitchyOmega 更新规则列表" alt="SwitchyOmega 更新规则列表" /></p>
+
+<p><strong>记得先在菜单里选自动切换模式</strong>。 用直接连接或系统模式有可能会下载失败。为什么呢？因为规则列表网址本身也有可能需要代理才能访问。</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164655.png" title="SwitchyOmega 更新规则列表" alt="SwitchyOmega 更新规则列表" /></p>
+
+<p>这还有什么好说的，在自动切换设置底部点击那个蓝色的“立即更新情景模式”按钮就是了。完全照着图片上的步骤点过去就是了，不需要多费功夫。当然有人会注意到自动切换又弹出一段教程。为什么呢？因为自动切换算是一个比较复杂的概念，今后的手动配置也需要用到自动切换。再一次的，这里是可以跳过教程的。想看看教程我也不反对，加深理解嘛。只是之后别忘记点那个“立即更新情景模式”按钮就好。</p>
+
+<p>如果成功了，大概会像是图中这样：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164656.png" title="SwitchyOmega 情景模式配置" alt="SwitchyOmega 情景模式配置" /></p>
+
+<p>（注： GFWList 规则列表网址已经变更，见此页面最下方说明。截图中仍然是旧网址，但除此之外操作步骤相同，并没有其他错误。）</p>
+
+<p>但如果显示更新失败呢？图上很多字，我也不复述了。但我还是要再罗嗦一句，<strong>大部分出现“更新失败”提示的用户，都是因为代理服务器设置不正确。少部分呢？是因为其实没有代理服务器</strong>，只是盲目按照上面的图片走了个没有意义的流程。</p>
+
+<p>但你不访问网页试试看，怎么知道代理服务器不工作呢？所以，试着访问一个配置成需要使用代理服务器才能访问的网址吧。一个很好的例子就是规则列表本身的网址（<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt">可以直接点这里</a>）。或者，也可以在图标的弹出菜单里切换到 GFWed （这样所有网址都会使用代理，相当于全局模式），然后再打开新标签页访问任意网站。</p>
+
+<p>设置成功后，访问网页中如果有资源（如样式、图片、脚本等）未加载成功，则图标上会有提示。点菜单里未加载的资源即可，按提示操作，选择 GFWed ，让那些资源走代理一般就可以了。有时候这样操作一次还不够，因为新加载成功的资源又加载了别的资源，那重复个两三次大概也就行了。</p>
+
+<p>P.S. 资源加载失败可能是多种原因导致，除了没有使用代理服务器以外，也可能是网络本身或者代理服务器不稳定、太慢，或者干脆是对方服务器的问题之类的。 SwitchyOmega 作为一个设置软件，很难判断具体是什么原因，只能向您报告问题而已。有时候即使用了代理也打不开，那也不是 SwitchyOmega 坏掉了。如果看见图标上有个数字觉得很烦很焦躁，可以到选项>通用>网络请求里关闭检测功能，但这只能隐藏问题而不能真正解决问题。</p>
+
+<h3>gfwlist 规则列表地址更新</h3>
+
+<p><a href="https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak">这里提供的备份文件已经使用了新的地址</a>，新用户请放心使用。老用户也可下载新版备份文件覆盖（注意：会清空自定义的设置）。 如果想继续使用现在的设置，请注意在自动切换中，将规则列表网址手动改为新地址！ SwitchyOmega 不知道您在用 GFWList ，也不会自动更改列表的 URL 地址，所以只能请您手动改一下了。具体的要修改的位置在上面一张图上有标识，是深红色下划线标出的那个文本框（截图中仍然是旧地址，新地址见下方）。</p>
+
+<p>新地址：</p>
+
+<pre><code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+</code></pre>
+
+<p>旧地址(请不要再使用这个地址了，已经很久不更新了。):</p>
+
+<p><del><a href="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt">https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</a></del></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">cooear</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-05-05T10:49:58+08:00'><span class='date'>2014-05-05</span> <span class='time'>10:49 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  
+     <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share?uid=2017486" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1396499123021149" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2014/05/switchyomega-configuration" data-title="SwitchyOmega Chrome浏览器安装配置" data-url="http://cooear.com/blog/2014/05/switchyomega-configuration/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"cooear"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+ 
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/" title="Previous Post: GAE(Google App Engine)+goagent+chrome浏览器+switchysharp图文教程">&laquo; GAE(Google App Engine)+goagent+chrome浏览器+switchysharp图文教程</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/" title="Next Post: Lantern(灯笼)安装和使用教程">Lantern(灯笼)安装和使用教程 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/05/xx-net-jie-li-goagent/">XX-Net接力GoAgent的工具</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/">20个比较高级的Linux命令</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/04/guo-wai-dnsfu-wu-qi-lie-biao/">国外DNS服务器列表</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">OpenWrt使用ShadowSocks透明代理智能翻墙上网</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern(灯笼)安装和使用教程</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
+<a style="font-size: 90%" href="/tags/switchyomega/">SwitchyOmega</a>
+<a style="font-size: 180%" href="/tags/linux/">Linux</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
+<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
+<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
+<a style="font-size: 90%" href="/tags/chrome/">Chrome</a>
+<a style="font-size: 90%" href="/tags/gae/">GAE</a>
+<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 160%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 90%" href="/tags/google/">Google</a>
+<a style="font-size: 125%" href="/tags/xx-net/">XX-Net</a>
+<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
+<a style="font-size: 125%" href="/tags/gmail/">Gmail</a>
+<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
+<a style="font-size: 145%" href="/tags/goagent/">GoAgent</a>
+<a style="font-size: 145%" href="/tags/fan-qiang/">翻墙</a>
+
+  </ul>
+</section>
+<!--返回顶部开始-->
+<div id="full" style="height:0px; position:fixed; right:5%; bottom:12%; z-index:100; text-align:center; background-color:transparent; cursor:pointer;">
+	<a href="#" onclick="goTop();return false;"><img src="/images/top.png" style="border:0" border=0 alt="返回顶部" /></a>
+</div>
+<script src="/javascripts/top.js" type="text/javascript"></script>
+<!--返回顶部结束-->
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - cooear -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> & <a href="http://cooear.com">酷耳</a>.</span>
+</p>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?a8e2bd164d0f4e6ce26d50a36471c121";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

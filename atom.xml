@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-04T21:00:35+08:00</updated>
+  <updated>2016-05-05T11:21:40+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -993,6 +993,86 @@ stop() {
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[SwitchyOmega Chrome浏览器安装配置]]></title>
+    <link href="http://cooear.com/blog/2014/05/switchyomega-configuration/"/>
+    <updated>2014-05-05T10:49:58+08:00</updated>
+    <id>http://cooear.com/blog/2014/05/switchyomega-configuration</id>
+    <content type="html"><![CDATA[<h3>一、安装SwitchyOmega</h3>
+
+<p>首先你需要安装 SwitchyOmega。<a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif/?hl=zh">SwitchyOmega</a>可以在谷歌应用商店安装。</p>
+
+<ul>
+<li>如果因为网络问题安装失败，您也可以直接<a href="https://github.com/FelisCatus/SwitchyOmega/releases">在 Github 上下载最新版安装包</a>，然后按照下载页面上的说明手动安装。</li>
+</ul>
+
+
+<p>安装完毕后应该会自动打开选项页面，之后按以下说明操作即可。</p>
+
+<h3>二、导入备份</h3>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164651.png" title="SwitchyOmega 安装" alt="SwitchyOmega 安装" /></p>
+
+<!--more-->
+
+
+<p>这里有一段介绍性的教程。如果想了解SwitchyOmega的不妨跟着教程走一遍。如果急着设置好的话，还是点跳过吧  。（阅览教程与否不影响接下来的步骤。）</p>
+
+<p>按照下图，在导入导出页面点击“从备份文件恢复”。那么问题就来了，已经配置好的设置备份文件哪家强？SwitchyOmega项目组找FelisCatus！<a href="https://raw.githubusercontent.com/wiki/FelisCatus/SwitchyOmega/GFWList.bak">我这里有提供备份文件，大家可以自己下载使用</a>。假如打开来是个网页怎么办？右键另存为呗。此外如果曾经在SwitchySharp里配置过了，直接用SwitchySharp导出的备份文件也行的，不过要记得按照此页面最下方的说明，更改一下规则列表的网址</p>
+
+<p>图中第三步会打开一个选择文件的对话框，这时候选择刚下载好的备份文件就行了。</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164652.png" title="SwitchyOmega 导入/导出" alt="SwitchyOmega 导入/导出" /></p>
+
+<h3>三、设置代理服务器</h3>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164653.png" title="SwitchyOmega 配置" alt="SwitchyOmega 配置" /></p>
+
+<p>这部分比较简单，在“GFWed”情景模式设置好代理协议和端口就好了。再一次说明，请仔细阅读您所使用的代理软件说明书，尤其是不要填错了代理协议（常见的有HTTP或SOCKS），因为那个填错了有一大堆问题，程序还不会提示你填错了。</p>
+
+<p>虽然我已经说过很多次了， <strong>但如果你还没有代理服务器，那你要 SwitchyOmega 干嘛呢？</strong>你需要去弄一个代理服务器/代理软件，然后先把代理运行起来再说。什么？哪里有免费的代理服务器？这和我又有什么关系呢？ SwitchyOmega 的作用只是告诉 Chrome 应该使用什么代理，配置哪些网址用哪些代理而已。 SwitchyOmega 不是翻墙软件，也没有义务提供免费的代理服务器或是帮你翻墙。</p>
+
+<h3>四、更新规则列表</h3>
+
+<p>GFWList 项目是一个经常更新的项目，提供的规则列表也是需要定期下载更新的。还好 SwitchyOmega 项目有提供自动下载功能，可以应对变化迅速的网络环境。不过，既然马上就要用来上网，那自然是要<strong>手动进行首次下载的</strong>，对不对？</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164654.png" title="SwitchyOmega 更新规则列表" alt="SwitchyOmega 更新规则列表" /></p>
+
+<p><strong>记得先在菜单里选自动切换模式</strong>。 用直接连接或系统模式有可能会下载失败。为什么呢？因为规则列表网址本身也有可能需要代理才能访问。</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164655.png" title="SwitchyOmega 更新规则列表" alt="SwitchyOmega 更新规则列表" /></p>
+
+<p>这还有什么好说的，在自动切换设置底部点击那个蓝色的“立即更新情景模式”按钮就是了。完全照着图片上的步骤点过去就是了，不需要多费功夫。当然有人会注意到自动切换又弹出一段教程。为什么呢？因为自动切换算是一个比较复杂的概念，今后的手动配置也需要用到自动切换。再一次的，这里是可以跳过教程的。想看看教程我也不反对，加深理解嘛。只是之后别忘记点那个“立即更新情景模式”按钮就好。</p>
+
+<p>如果成功了，大概会像是图中这样：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14624164656.png" title="SwitchyOmega 情景模式配置" alt="SwitchyOmega 情景模式配置" /></p>
+
+<p>（注： GFWList 规则列表网址已经变更，见此页面最下方说明。截图中仍然是旧网址，但除此之外操作步骤相同，并没有其他错误。）</p>
+
+<p>但如果显示更新失败呢？图上很多字，我也不复述了。但我还是要再罗嗦一句，<strong>大部分出现“更新失败”提示的用户，都是因为代理服务器设置不正确。少部分呢？是因为其实没有代理服务器</strong>，只是盲目按照上面的图片走了个没有意义的流程。</p>
+
+<p>但你不访问网页试试看，怎么知道代理服务器不工作呢？所以，试着访问一个配置成需要使用代理服务器才能访问的网址吧。一个很好的例子就是规则列表本身的网址（<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt">可以直接点这里</a>）。或者，也可以在图标的弹出菜单里切换到 GFWed （这样所有网址都会使用代理，相当于全局模式），然后再打开新标签页访问任意网站。</p>
+
+<p>设置成功后，访问网页中如果有资源（如样式、图片、脚本等）未加载成功，则图标上会有提示。点菜单里未加载的资源即可，按提示操作，选择 GFWed ，让那些资源走代理一般就可以了。有时候这样操作一次还不够，因为新加载成功的资源又加载了别的资源，那重复个两三次大概也就行了。</p>
+
+<p>P.S. 资源加载失败可能是多种原因导致，除了没有使用代理服务器以外，也可能是网络本身或者代理服务器不稳定、太慢，或者干脆是对方服务器的问题之类的。 SwitchyOmega 作为一个设置软件，很难判断具体是什么原因，只能向您报告问题而已。有时候即使用了代理也打不开，那也不是 SwitchyOmega 坏掉了。如果看见图标上有个数字觉得很烦很焦躁，可以到选项>通用>网络请求里关闭检测功能，但这只能隐藏问题而不能真正解决问题。</p>
+
+<h3>gfwlist 规则列表地址更新</h3>
+
+<p><a href="https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak">这里提供的备份文件已经使用了新的地址</a>，新用户请放心使用。老用户也可下载新版备份文件覆盖（注意：会清空自定义的设置）。 如果想继续使用现在的设置，请注意在自动切换中，将规则列表网址手动改为新地址！ SwitchyOmega 不知道您在用 GFWList ，也不会自动更改列表的 URL 地址，所以只能请您手动改一下了。具体的要修改的位置在上面一张图上有标识，是深红色下划线标出的那个文本框（截图中仍然是旧地址，新地址见下方）。</p>
+
+<p>新地址：</p>
+
+<pre><code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+</code></pre>
+
+<p>旧地址(请不要再使用这个地址了，已经很久不更新了。):</p>
+
+<p><del><a href="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt">https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</a></del></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[GAE(Google App Engine)+goagent+chrome浏览器+switchysharp图文教程]]></title>
     <link href="http://cooear.com/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/"/>
     <updated>2014-05-03T10:37:34+08:00</updated>
@@ -1081,6 +1161,8 @@ stop() {
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2015/03/unnamed2.png" title="Proxy SwitchyOmega升级下载" alt="Proxy SwitchyOmega升级下载" /></p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2015/03/unnamed3.png" title="Proxy SwitchyOmega升级下载" alt="Proxy SwitchyOmega升级下载" /></p>
+
+<p><a href="http://cooear.com/blog/2014/05/switchyomega-configuration/">SwitchyOmega详细安装配置</a></p>
 
 <h3>六、友情提示</h3>
 
