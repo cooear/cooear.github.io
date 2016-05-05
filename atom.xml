@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-05T18:36:42+08:00</updated>
+  <updated>2016-05-05T18:40:32+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -968,8 +968,6 @@ stop() {
 <p><a href="http://pan.baidu.com/s/1jG412Fs">Windows</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1hq5R2uC">Mac</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1i3iORzR">Linux</a></p>
 
 <p>如果遇到安装错误、安装不了，请挂代理安装，因为需要连接到亚马逊服务器下载主程序和java程序。Lantern必须要在Java环境下运行，否则会出问题。</p>
-
-<hr />
 
 <p><strong>最新版本Lantern设置<a href="#2.1.2">直接跳至此</a>，新版本已经不需要登陆Gmail账号这些操作。</strong></p>
 
