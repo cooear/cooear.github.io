@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: SwitchyOmega | 酷耳]]></title>
   <link href="http://cooear.com/tags/switchyomega/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-05T11:25:35+08:00</updated>
+  <updated>2016-05-05T12:24:23+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -22,10 +22,7 @@
 
 <p>首先你需要安装 SwitchyOmega。<a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif/?hl=zh">SwitchyOmega</a>可以在谷歌应用商店安装。</p>
 
-<ul>
-<li>如果因为网络问题安装失败，您也可以直接<a href="https://github.com/FelisCatus/SwitchyOmega/releases">在 Github 上下载最新版安装包</a>，然后按照下载页面上的说明手动安装。</li>
-</ul>
-
+<p>&nbsp;&nbsp;&nbsp;&nbsp;* 如果因为网络问题安装失败，您也可以直接<a href="https://github.com/FelisCatus/SwitchyOmega/releases">在 Github 上下载最新版安装包</a>，然后按照下载页面上的说明手动安装。</p>
 
 <p>安装完毕后应该会自动打开选项页面，之后按以下说明操作即可。</p>
 
@@ -111,7 +108,7 @@
 </ol>
 
 
-<h3>二、确保自己拥有一个Google账户</h3>
+<h3>二、确保自己拥有一个Google9账户</h3>
 
 <p><strong>step1</strong>: 创建Google账号，并登录<a href="https://appengine.google.com/start/createapp">Google App Engine</a>按下图操作(已有账号的请跳过);</p>
 

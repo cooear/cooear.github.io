@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: XX-Net | 酷耳]]></title>
   <link href="http://cooear.com/tags/xx-net/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-05T11:25:35+08:00</updated>
+  <updated>2016-05-05T12:24:23+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -18,9 +18,37 @@
     <link href="http://cooear.com/blog/2016/05/xx-net-jie-li-goagent/"/>
     <updated>2016-05-04T20:46:17+08:00</updated>
     <id>http://cooear.com/blog/2016/05/xx-net-jie-li-goagent</id>
-    <content type="html"><![CDATA[<p>XX-Net是一个接力GoAgent的翻墙工具，XX-Net提供GAE proxy并且稳定、易用、快速，Web界面，人性化交互等。</p>
+    <content type="html"><![CDATA[<p>XX-Net是一个接力GoAgent的翻墙工具，提供GAE proxy并且稳定、易用、快速，Web界面，人性化交互等是大家能够科学上网。</p>
+
+<p>XX-Net可以当作是一个已经配置好的goagent（目前在<a href="https://github.com/XX-net/">Github上托管</a>），并集成了gogotester，那么总的来说有：</p>
+
+<h3>XX-Net的基本特点</h3>
+
+<ul>
+<li>集成搜索Google IP；</li>
+<li>基于Web 的配置界面、上传部署、Log查看，也就是说你的所有配置都可以在网页上进行，比较直观；</li>
+<li>内置了公共 appid, 安装即可上网, 当然菊部哥依然推荐注册自己的appid（<a href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">如何注册Google Appid</a>）；</li>
+<li>新版本提示、更新升级。</li>
+</ul>
+
+
+<!--more-->
+
+
+<h3>XX-Net支持平台</h3>
+
+<ul>
+<li>Windows XP （需要 tcpip.sys 补丁, 比如用<a href="https://github.com/XX-net/tcp-z/archive/master.zip">tcp-z</a>）</li>
+<li>Windows 7/8</li>
+<li>Ubuntu （不能显示系统托盘）</li>
+<li>Debian</li>
+<li>Mac OS X</li>
+</ul>
+
 
 <p>XX-Net<a href="https://github.com/XX-net/XX-Net/blob/master/code/default/download.md">下载地址</a></p>
+
+<p><font color=red><em>持续更新中</em></font></p>
 ]]></content>
   </entry>
   
@@ -33,10 +61,7 @@
 
 <p>首先你需要安装 SwitchyOmega。<a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif/?hl=zh">SwitchyOmega</a>可以在谷歌应用商店安装。</p>
 
-<ul>
-<li>如果因为网络问题安装失败，您也可以直接<a href="https://github.com/FelisCatus/SwitchyOmega/releases">在 Github 上下载最新版安装包</a>，然后按照下载页面上的说明手动安装。</li>
-</ul>
-
+<p>&nbsp;&nbsp;&nbsp;&nbsp;* 如果因为网络问题安装失败，您也可以直接<a href="https://github.com/FelisCatus/SwitchyOmega/releases">在 Github 上下载最新版安装包</a>，然后按照下载页面上的说明手动安装。</p>
 
 <p>安装完毕后应该会自动打开选项页面，之后按以下说明操作即可。</p>
 
