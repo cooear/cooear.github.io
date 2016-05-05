@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: 翻墙 | 酷耳]]></title>
   <link href="http://cooear.com/tags/fan-qiang/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-05T17:23:19+08:00</updated>
+  <updated>2016-05-05T18:17:21+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -110,6 +110,14 @@
 
 <p> <strong>注意</strong>：在输入框中添加需要代理的网站地址，每个域名一行。</p>
 
+<p> <strong>四、</strong> 浏览器代理设置(以chrome为例)</p>
+
+<p>　　装有switchysharp扩展的话，可以直接选择 【使用系统代理设置】；可以暂时停用switchysharp还可以在switchysharp【选项】【新建情景模式】，选择【自动配置】，在Url处填入你自己在<strong>Lantern</strong>获得pac文地址,切换到<strong>Lantern</strong>模式。如图：</p>
+
+<p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/3.png" title="Lantern 全局代理设置" alt="Lantern 全局代理设置" /></p>
+
+<p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/4.png" title="Lantern 的Chrome switchysharp设置" alt="Lantern 的Chrome switchysharp设置" /></p>
+
 <p> <strong><span id="2.1.2">2.1.2版本设置教程</span></strong></p>
 
 <ul>
@@ -126,13 +134,14 @@
 
 <p> <img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146243754102.png" title="Lantern 最新代理设置" alt="Lantern 最新代理设置" /></p>
 
-<p> <strong> 四、</strong> 浏览器代理设置(以chrome为例)</p>
+<ul>
+<li>Chrome浏览器SwitchyOmega设置</li>
+</ul>
 
-<p>　　装有switchysharp扩展的话，可以直接选择 【使用系统代理设置】；可以暂时停用switchysharp还可以在switchysharp【选项】【新建情景模式】，选择【自动配置】，在Url处填入你自己在<strong>Lantern</strong>获得pac文地址,切换到<strong>Lantern</strong>模式。如图：</p>
 
-<p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/3.png" title="Lantern 全局代理设置" alt="Lantern 全局代理设置" /></p>
+<p> <img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146244303701.png" title="Lantern 最新代理设置" alt="Lantern SwitchyOmega设置" /></p>
 
-<p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/4.png" title="Lantern 的Chrome switchysharp设置" alt="Lantern 的Chrome switchysharp设置" /></p>
+<p> <img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146244303702.png" title="Lantern 最新代理设置" alt="Lantern SwitchyOmega设置" /></p>
 
 <p> <strong>五. Lantern</strong>设置成功，顺利浏览<strong>Youtube</strong>，如图：</p>
 
