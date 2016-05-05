@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-05T12:24:23+08:00</updated>
+  <updated>2016-05-05T17:03:41+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -969,7 +969,9 @@ stop() {
 
 <p>如果遇到安装错误、安装不了，请挂代理安装，因为需要连接到亚马逊服务器下载主程序和java程序。Lantern必须要在Java环境下运行，否则会出问题。</p>
 
-<p><strong>2.1、</strong>完成后会弹出Lantern(灯笼)的介面面板，最新为Lantern1.4.3,如图：</p>
+<p>最新版本Lantern设置<a href="#2.1.2">直接跳至此</a>，新版本已经不需要登陆Gmail账号这些操作。</p>
+
+<p><strong>2.1、</strong>完成后会弹出Lantern(灯笼)的介面面板，最新为<del>Lantern1.4.3</del> Lantern2.1.2,如图：</p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2014/08/20131123054656thw4v.jpeg" title="Lantern 安装完成" alt="Lantern 安装完成" /></p>
 
@@ -1002,6 +1004,16 @@ stop() {
 <p> <img src="http://g1c1i0.cooear.com/images/uploads/2014/08/2.png" title="Lantern 代理设置" alt="Lantern 代理设置" /></p>
 
 <p> <strong>注意</strong>：在输入框中添加需要代理的网站地址，每个域名一行。</p>
+
+<p> <strong><span id="2.1.2">2.1.2版本设置教程</span></strong></p>
+
+<ol>
+<li><p>安装成功后页面
+<img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146243754101.png" title="Lantern 代理设置" alt="Lantern 代理设置" /></p></li>
+<li><p>配置页面
+<img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146243754102.png" title="Lantern 最新代理设置" alt="Lantern 最新代理设置" /></p></li>
+</ol>
+
 
 <p> <strong> 4、</strong> 浏览器代理设置(以chrome为例)</p>
 
