@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: git | 酷耳]]></title>
   <link href="http://cooear.com/tags/git/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-06T11:59:19+08:00</updated>
+  <updated>2016-05-06T13:19:31+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -36,7 +36,12 @@ git commit --amend -m 'xxx'                               # 合并上一次提�
 git commit -am 'xxx'                                      # 将add和commit合为一步
 git rm xxx                                                # 删除index中的文件
 git rm -r *                                               # 递归删除
-git log                                                   # 显示提交日志
+</code></pre>
+
+<!--more-->
+
+
+<pre><code>git log                                                   # 显示提交日志
 git log -1                                                # 显示1行日志 -n为n行
 git log -5
 git log --stat                                            # 显示提交日志及相关变动文件
