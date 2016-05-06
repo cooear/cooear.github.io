@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-06T11:43:51+08:00</updated>
+  <updated>2016-05-06T11:59:19+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -14,13 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Git Toturial]]></title>
+    <title type="html"><![CDATA[Git命令大全]]></title>
     <link href="http://cooear.com/blog/2016/05/git-toturial/"/>
     <updated>2016-05-06T11:00:43+08:00</updated>
     <id>http://cooear.com/blog/2016/05/git-toturial</id>
-    <content type="html"><![CDATA[<h3>git命令大全</h3>
-
-<pre><code>git init                                                  # 初始化本地git仓库（创建新仓库）
+    <content type="html"><![CDATA[<pre><code>git init                                                  # 初始化本地git仓库（创建新仓库）
 git config --global user.name "xxx"                       # 配置用户名
 git config --global user.email "xxx@xxx.com"              # 配置邮件
 git config --global color.ui true                         # git status等命令自动着色
