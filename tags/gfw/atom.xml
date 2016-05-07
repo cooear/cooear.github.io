@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: GFW | 酷耳]]></title>
   <link href="http://cooear.com/tags/gfw/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-08T00:03:46+08:00</updated>
+  <updated>2016-05-08T00:06:34+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -35,7 +35,7 @@
 
 <ul>
 <li>1 填入你希望的appid</li>
-<li>2 实际给你的appid可能与你填入的appid有差异，建议字母后面加上3-4个数字</li>
+<li>2 实际给你的appid可能与你填入的appid有差异，建议字母后面加上2-3个数字</li>
 <li>然后如图操作点击创建(appid允许使用英文字母和短横线)。</li>
 </ul>
 
@@ -76,7 +76,7 @@
 <ul>
 <li>集成搜索Google IP；</li>
 <li>基于Web 的配置界面、上传部署、Log查看，也就是说你的所有配置都可以在网页上进行，比较直观；</li>
-<li>内置了公共 appid, 安装即可上网, 当然菊部哥依然推荐注册自己的appid（<a href="/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">如何注册Google Appid</a>）；</li>
+<li>内置了公共 appid, 安装即可上网, 当然我们依然推荐注册自己的appid（<a href="/blog/2016/05/new-gae-create/">如何注册Google Appid</a>）；</li>
 <li>新版本提示、更新升级。</li>
 </ul>
 
