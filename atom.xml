@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-07T16:43:03+08:00</updated>
+  <updated>2016-05-07T16:51:09+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -1291,7 +1291,7 @@ stop() {
 
 <h3>五、设置switchsharp插件</h3>
 
-<p><strong>注意</strong>：Proxy SwitchySharp升级为 <a href="http://pan.baidu.com/s/1i3rHHGT">Proxy SwitchyOmega</a> 主要设置和Proxy SwitchySharp相似，会在Proxy SwitchySharp设置后简单介绍。</p>
+<p><strong>注意</strong>：Proxy SwitchySharp升级为 <a href="http://cooear.com/blog/2014/05/switchyomega-configuration/">Proxy SwitchyOmega</a> 主要设置和Proxy SwitchySharp相似，会在Proxy SwitchySharp设置后简单介绍。</p>
 
 <p>step1: 按下图填写</p>
 
