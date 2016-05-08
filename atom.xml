@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-08T13:37:00+08:00</updated>
+  <updated>2016-05-08T15:42:39+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -58,7 +58,7 @@
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/1462634564006.jpg" title="设置应用专用密码" alt="设置应用专用密码" /></p>
 
-<p><font color=red><strong>注</strong></font>: 每个Gmail账户最多只能创建12个APP ID应用，每个GAE应用每天有1GB的免费流量。如果你经常下载或者观看视频建议多创建几个Google App Engine应用;APP ID之英雄流量不影响速度。<strong>根据以往经验APP ID尽量不要使用IOS、iPhone、iPad、iPod、Android等带有明显移动设备标识的关键字，避免在使用代理时部分网站将其识别为移动设备。</strong></p>
+<p><font color=red><strong>注</strong></font>: 每个Gmail账户最多只能创建12个APP ID应用，每个GAE应用每天有1GB的免费流量。如果你经常下载或者观看视频建议多创建几个Google App Engine应用;APP ID只和流量有关不影响速度。<strong>根据以往经验APP ID尽量不要使用IOS、iPhone、iPad、iPod、Android等带有明显移动设备标识的关键字，避免在使用代理时部分网站将其识别为移动设备。</strong></p>
 ]]></content>
   </entry>
   
