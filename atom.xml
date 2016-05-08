@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-08T11:30:00+08:00</updated>
+  <updated>2016-05-08T11:39:58+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -883,7 +883,7 @@ Enter first number:
 <pre><code>    ipconfig/flushdns
 </code></pre>
 
-<p>OS X Yosemite及以后新版本</p>
+<p>OS X Yosemite及更新机型</p>
 
 <pre><code>sudo killall -HUP mDNSResponder     
 </code></pre>
@@ -903,7 +903,7 @@ Enter first number:
 <pre><code>    sudo killall -HUP mDNSResponder
 </code></pre>
 
-<p>Mac OS X 更新DNS缓存 <a href="https://support.apple.com/en-us/HT202516">官方参考链接</a></p>
+<p>Mac OS X 更新DNS缓存<a href="https://support.apple.com/zh-cn/HT202516">官方参考链接</a></p>
 
 <p>Linux: 在［终端］运行命令</p>
 
