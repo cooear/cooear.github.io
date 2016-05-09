@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>其实你有无数Gmail帐号 - 酷耳</title>
+  <title>Yii验证码刷新不变 - 酷耳</title>
   <meta name="author" content="cooear">
 
   
-  <meta name="description" content="Gmail的一个秘密就是你可以在自己的邮箱帐户名中间加入“.”，或者在帐户名后面加入“+”来创造出无限多个帐户名。">
-  <meta name="keywords" content="Gmail, 账号, 安全">
+  <meta name="description" content="翻墙变得越来越难,然而最近却传来了一个好消息,一款免费强大的翻墙软件Lantern应运而生，使得翻墙变的更加简单、方便。">
+  <meta name="keywords" content="Yii, 验证码, 刷新">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cooear.com/blog/2013/09/you-have-numerous-gmail-account/">
+  <link rel="canonical" href="http://cooear.com/blog/2013/12/yii-verification-code/">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="酷耳" type="application/atom+xml">
@@ -88,7 +88,7 @@
   
   <header>
     
-      <h1 class="entry-title">其实你有无数Gmail帐号</h1>
+      <h1 class="entry-title">Yii验证码刷新不变</h1>
     
     
       <p class="meta">
@@ -97,28 +97,70 @@
 
 
 
-<time class='entry-date' datetime='2013-09-05T10:24:30+08:00'><span class='date'>2013-09-05</span> <span class='time'>10:24 am</span></time>
+<time class='entry-date' datetime='2013-12-04T10:35:21+08:00'><span class='date'>2013-12-04</span> <span class='time'>10:35 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Gmail众所周知的一个秘密就是你可以在自己的邮箱帐户名中间加入“.”，或者在帐户名后面加入“+”来创造出无限多个帐户名。比如 google@gmail.com是你的主用户名，你往goo.gle@gmail.com发邮件也可以收到，你往google+shit@gmail.com发邮件 也可以收到。</p>
+<div class="entry-content"><p>关于Yii验证码使用时刷新页面不变的情况，网上也有很多的解决方案，但是相对的都比较麻烦而且貌似实现中也有这样或者那样的问题，现在提供一个取巧的方法，就是在页面刷新时给验证码绑定click事件。代码如下：</p>
 
-<p>也许会有很多人觉得这真是画蛇添足的功能或者说难道这是Gmail的bug？想一下Google为什么要推出这个功能呢？难道是Google吃饱撑的了？但酷耳要说这绝不是Google吃饱撑的或者Gmail的bug而是Gmail的feature，而且是目前为止仅有Gmail有的特性（至少本人接触到的国内外的所有邮箱仅Gmail有）。</p>
+<pre><code>&lt;script type="text/javascript"&gt;
+//临时应急方案
+$(document).ready(function(){
+    var img = new Image;
+    img.onload=function(){
+        $('#captcha_img').trigger('click');
+    }
+    img.src = $('#captcha_img').attr('src');
+});
+&lt;/script&gt;
+</code></pre>
 
-<p>Gmail该特性最关键的还是为了方便地建立过滤器。因为发送方的Email规则我们往往难以掌控，因此基于发送方邮件建立的过滤器往往会比较“不靠谱”，而且维护复杂。然而，基于接受邮件地址来建立过滤器则非常方便。</p>
+<p>因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
 
-<p>例如：我分别在多个bbs和视频网站分别注册了帐号google+bbs@gmail.com、google+video@gmail.com,这样我们就可以根据不同的帐号设置不同的过滤规则了将bbs和视频网站的邮件分别设置过滤规则了。</p>
+<pre><code>class MyCaptchaAction extends CCaptchaAction {
+   const SESSION_VAR_PREFIX='Ext.MyCaptchaAction.';
+   public $minLength=4; //默认四位
+   public $maxLength=4; //默认四位
 
-<p>另外，Gmail的此特性可以允许你在同一个网站同时注册多个帐号而不用申请多个邮箱帐号，而且一个Gmail帐号就可以管理所有的帐号邮件。</p>
+   protected function generateVerifyCode()
+   {
+       if($this-&gt;minLength&lt;3)
+           $this-&gt;minLength=3;
+       if($this-&gt;maxLength&gt;20)
+           $this-&gt;maxLength=20;
+       if($this-&gt;minLength&gt;$this-&gt;maxLength)
+           $this-&gt;maxLength=$this-&gt;minLength;
+       $length=rand($this-&gt;minLength,$this-&gt;maxLength);
 
-<p>个人用途：</p>
+       $letters='1234567890';//此处可以去掉数字1和0避免和字母L和O混淆
+       $code='';
+       for($i=0;$i&lt;$length;++$i)
+       {
+           $code.=$letters[rand(0,10)];
+       }
 
-<p>在给别人留email或者注册网站信息时使用不同的Gmail别名，如：google+cooear@gmail.com、google+bank@gmail.com、google+baidu@gmail.com、google+taobao@gmail.com等，当对应别名收到骚扰邮件或者广告邮件时就可以知道什么地方泄漏了自己有邮件信息。</p>
+       return $code;
+   }
+}
+</code></pre>
 
-<p>……</p>
+<p>放到 protected/extensions 目录</p>
+
+<pre><code>//在配置文件 protected/config/main.php中自动加载 extensions 目录的类
+'import'=&gt;array(
+   'application.models.*',
+   'application.components.*',
+   'application.extensions.*',
+),
+
+//使用:
+'captcha'=&gt;array(
+   'class'=&gt;'application.extensions.MyCaptchaAction',
+),  
+</code></pre>
 </div>
 
 
@@ -134,7 +176,7 @@
 
 
 
-<time class='entry-date' datetime='2013-09-05T10:24:30+08:00'><span class='date'>2013-09-05</span> <span class='time'>10:24 am</span></time>
+<time class='entry-date' datetime='2013-12-04T10:35:21+08:00'><span class='date'>2013-12-04</span> <span class='time'>10:35 am</span></time>
       
 
 
@@ -162,7 +204,7 @@ var jiathis_config = {data_track_clickback:'true'};
 <!-- JiaThis Button END -->
 
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/blog/2013/09/you-have-numerous-gmail-account" data-title="其实你有无数Gmail帐号" data-url="http://cooear.com/blog/2013/09/you-have-numerous-gmail-account/"></div>
+	<div class="ds-thread" data-thread-key="/blog/2013/12/yii-verification-code" data-title="Yii验证码刷新不变" data-url="http://cooear.com/blog/2013/12/yii-verification-code/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -190,10 +232,10 @@ var duoshuoQuery = {short_name:"cooear"};
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/linuxti-chu-zai-xian-yong-hu/" title="Previous Post: linux踢出在线用户">&laquo; linux踢出在线用户</a>
+        <a class="basic-alignment left" href="/blog/2013/12/iphone-huan-dian-chi-jiao-cheng/" title="Previous Post: Iphone4/4S换电池教程">&laquo; Iphone4/4S换电池教程</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/12/iphone-huan-dian-chi-jiao-cheng/" title="Next Post: Iphone4/4S换电池教程">Iphone4/4S换电池教程 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/02/12ge-fei-chang-you-yong-de-df-ming-ling-cha-kan-linuxci-pan-kong-jian/" title="Next Post: 12个非常有用的”df”命令查看Linux磁盘空间">12个非常有用的”df”命令查看Linux磁盘空间 &raquo;</a>
       
     </p>
   </footer>
@@ -236,39 +278,39 @@ var duoshuoQuery = {short_name:"cooear"};
 <section>
   <h1>Tags</h1>
   <ul class="tag-cloud">
-<a style="font-size: 90%" href="/tags/git/">git</a>
 <a style="font-size: 125%" href="/tags/chrome/">Chrome</a>
-<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
-<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
-<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
-<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
-<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 90%" href="/tags/win8/">win8</a>
 <a style="font-size: 160%" href="/tags/gmail/">Gmail</a>
-<a style="font-size: 125%" href="/tags/google/">Google</a>
-<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
-<a style="font-size: 90%" href="/tags/github/">GitHub</a>
-<a style="font-size: 145%" href="/tags/switchyomega/">SwitchyOmega</a>
 <a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
 <a style="font-size: 145%" href="/tags/fan-qiang/">翻墙</a>
+<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
+<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 125%" href="/tags/google/">Google</a>
+<a style="font-size: 145%" href="/tags/switchyomega/">SwitchyOmega</a>
+<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
+<a style="font-size: 171%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/yii/">Yii</a>
+<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
+<a style="font-size: 180%" href="/tags/linux/">Linux</a>
+<a style="font-size: 90%" href="/tags/github/">GitHub</a>
+<a style="font-size: 171%" href="/tags/goagent/">GoAgent</a>
+<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 125%" href="/tags/gae/">GAE</a>
 <a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
 <a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
-<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
-<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
-<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
-<a style="font-size: 125%" href="/tags/gae/">GAE</a>
-<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
-<a style="font-size: 171%" href="/tags/goagent/">GoAgent</a>
-<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
-<a style="font-size: 90%" href="/tags/win8/">win8</a>
-<a style="font-size: 125%" href="/tags/xx-net/">XX-Net</a>
-<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
-<a style="font-size: 171%" href="/tags/gfw/">GFW</a>
-<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
-<a style="font-size: 90%" href="/tags/yii/">Yii</a>
-<a style="font-size: 180%" href="/tags/linux/">Linux</a>
-<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
 <a style="font-size: 90%" href="/tags/pkill/">pkill</a>
-<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
+<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
+<a style="font-size: 90%" href="/tags/git/">git</a>
+<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 125%" href="/tags/xx-net/">XX-Net</a>
 
   </ul>
 </section>

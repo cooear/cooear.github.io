@@ -45,6 +45,10 @@
 <lastmod>2014-02-25T16:20:32+08:00</lastmod>
 </url>
 <url>
+<loc>http://cooear.com/blog/2013/12/yii-verification-code/</loc>
+<lastmod>2013-12-04T10:35:21+08:00</lastmod>
+</url>
+<url>
 <loc>http://cooear.com/blog/2013/12/iphone-huan-dian-chi-jiao-cheng/</loc>
 <lastmod>2013-12-03T20:10:47+08:00</lastmod>
 </url>
@@ -147,6 +151,9 @@
 <loc>http://cooear.com/tags/jiao-cheng/</loc>
 </url>
 <url>
+<loc>http://cooear.com/tags/yii/</loc>
+</url>
+<url>
 <loc>http://cooear.com/tags/gae/</loc>
 </url>
 <url>
@@ -187,8 +194,5 @@
 </url>
 <url>
 <loc>http://cooear.com/tags/github/</loc>
-</url>
-<url>
-<loc>http://cooear.com/posts/2/</loc>
 </url>
 </urlset>

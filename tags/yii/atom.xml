@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Yii | 酷耳]]></title>
+  <link href="http://cooear.com/tags/yii/atom.xml" rel="self"/>
+  <link href="http://cooear.com/"/>
+  <updated>2016-05-09T10:48:33+08:00</updated>
+  <id>http://cooear.com/</id>
+  <author>
+    <name><![CDATA[cooear]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yii验证码刷新不变]]></title>
+    <link href="http://cooear.com/blog/2013/12/yii-verification-code/"/>
+    <updated>2013-12-04T10:35:21+08:00</updated>
+    <id>http://cooear.com/blog/2013/12/yii-verification-code</id>
+    <content type="html"><![CDATA[<p>关于Yii验证码使用时刷新页面不变的情况，网上也有很多的解决方案，但是相对的都比较麻烦而且貌似实现中也有这样或者那样的问题，现在提供一个取巧的方法，就是在页面刷新时给验证码绑定click事件。代码如下：</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+//临时应急方案
+$(document).ready(function(){
+    var img = new Image;
+    img.onload=function(){
+        $('#captcha_img').trigger('click');
+    }
+    img.src = $('#captcha_img').attr('src');
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
+
+<pre><code>class MyCaptchaAction extends CCaptchaAction {
+   const SESSION_VAR_PREFIX='Ext.MyCaptchaAction.';
+   public $minLength=4; //默认四位
+   public $maxLength=4; //默认四位
+
+   protected function generateVerifyCode()
+   {
+       if($this-&gt;minLength&lt;3)
+           $this-&gt;minLength=3;
+       if($this-&gt;maxLength&gt;20)
+           $this-&gt;maxLength=20;
+       if($this-&gt;minLength&gt;$this-&gt;maxLength)
+           $this-&gt;maxLength=$this-&gt;minLength;
+       $length=rand($this-&gt;minLength,$this-&gt;maxLength);
+
+       $letters='1234567890';//此处可以去掉数字1和0避免和字母L和O混淆
+       $code='';
+       for($i=0;$i&lt;$length;++$i)
+       {
+           $code.=$letters[rand(0,10)];
+       }
+
+       return $code;
+   }
+}
+</code></pre>
+
+<p>放到 protected/extensions 目录</p>
+
+<pre><code>//在配置文件 protected/config/main.php中自动加载 extensions 目录的类
+'import'=&gt;array(
+   'application.models.*',
+   'application.components.*',
+   'application.extensions.*',
+),
+
+//使用:
+'captcha'=&gt;array(
+   'class'=&gt;'application.extensions.MyCaptchaAction',
+),  
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

@@ -134,6 +134,91 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/12/yii-verification-code/">Yii验证码刷新不变</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-12-04T10:35:21+08:00'><span class='date'>2013-12-04</span> <span class='time'>10:35 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>关于Yii验证码使用时刷新页面不变的情况，网上也有很多的解决方案，但是相对的都比较麻烦而且貌似实现中也有这样或者那样的问题，现在提供一个取巧的方法，就是在页面刷新时给验证码绑定click事件。代码如下：</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+//临时应急方案
+$(document).ready(function(){
+    var img = new Image;
+    img.onload=function(){
+        $('#captcha_img').trigger('click');
+    }
+    img.src = $('#captcha_img').attr('src');
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
+
+<pre><code>class MyCaptchaAction extends CCaptchaAction {
+   const SESSION_VAR_PREFIX='Ext.MyCaptchaAction.';
+   public $minLength=4; //默认四位
+   public $maxLength=4; //默认四位
+
+   protected function generateVerifyCode()
+   {
+       if($this-&gt;minLength&lt;3)
+           $this-&gt;minLength=3;
+       if($this-&gt;maxLength&gt;20)
+           $this-&gt;maxLength=20;
+       if($this-&gt;minLength&gt;$this-&gt;maxLength)
+           $this-&gt;maxLength=$this-&gt;minLength;
+       $length=rand($this-&gt;minLength,$this-&gt;maxLength);
+
+       $letters='1234567890';//此处可以去掉数字1和0避免和字母L和O混淆
+       $code='';
+       for($i=0;$i&lt;$length;++$i)
+       {
+           $code.=$letters[rand(0,10)];
+       }
+
+       return $code;
+   }
+}
+</code></pre>
+
+<p>放到 protected/extensions 目录</p>
+
+<pre><code>//在配置文件 protected/config/main.php中自动加载 extensions 目录的类
+'import'=&gt;array(
+   'application.models.*',
+   'application.components.*',
+   'application.extensions.*',
+),
+
+//使用:
+'captcha'=&gt;array(
+   'class'=&gt;'application.extensions.MyCaptchaAction',
+),  
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/12/iphone-huan-dian-chi-jiao-cheng/">Iphone4/4S换电池教程</a></h1>
     
     
@@ -495,43 +580,9 @@ root     pts/1        2013-01-22 10:45 (192.168.250.110)
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/linuxzhong-10ge-you-yong-de-lian-jie-cao-zuo-shi-li/">Linux中10个有用的链接操作示例</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-02-20T00:01:08+08:00'><span class='date'>2013-02-20</span> <span class='time'>12:01 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Linux中的链接命令意味着几个命令联合在一起使用，他们在执行命令时依据彼此之间执行的结果。Linux中的链接命令就像你使用shell语言写的能在命令行中直接执行的shell脚本。链接命令是程序的自动化成为可能。此外，在链接命令的作用下一台无人操作的机器可以有序的运行多个系统。</p>
-
-<p>本文旨在对常用的链接命(command­-chaining)令通过简要分析描述和相应的例子来提高我们码代码的能力，使我们能够写出更精炼更高效的代码从而降低系统负载。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/02/linuxzhong-10ge-you-yong-de-lian-jie-cao-zuo-shi-li/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="next" href="/posts/3">下一页 &rarr;</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -574,38 +625,39 @@ root     pts/1        2013-01-22 10:45 (192.168.250.110)
 <section>
   <h1>Tags</h1>
   <ul class="tag-cloud">
-<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
-<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
-<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
-<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
-<a style="font-size: 171%" href="/tags/gfw/">GFW</a>
-<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
-<a style="font-size: 145%" href="/tags/switchyomega/">SwitchyOmega</a>
 <a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
-<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
-<a style="font-size: 180%" href="/tags/linux/">Linux</a>
-<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
-<a style="font-size: 90%" href="/tags/github/">GitHub</a>
-<a style="font-size: 145%" href="/tags/fan-qiang/">翻墙</a>
 <a style="font-size: 90%" href="/tags/pkill/">pkill</a>
-<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
-<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
-<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
-<a style="font-size: 160%" href="/tags/gmail/">Gmail</a>
-<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
-<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
-<a style="font-size: 125%" href="/tags/chrome/">Chrome</a>
-<a style="font-size: 171%" href="/tags/goagent/">GoAgent</a>
-<a style="font-size: 90%" href="/tags/win8/">win8</a>
-<a style="font-size: 125%" href="/tags/google/">Google</a>
-<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
-<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
-<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
-<a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
 <a style="font-size: 125%" href="/tags/xx-net/">XX-Net</a>
-<a style="font-size: 90%" href="/tags/git/">git</a>
-<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
+<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
+<a style="font-size: 145%" href="/tags/switchyomega/">SwitchyOmega</a>
+<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 160%" href="/tags/gmail/">Gmail</a>
+<a style="font-size: 90%" href="/tags/win8/">win8</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
 <a style="font-size: 125%" href="/tags/gae/">GAE</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
+<a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
+<a style="font-size: 90%" href="/tags/yii/">Yii</a>
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 90%" href="/tags/github/">GitHub</a>
+<a style="font-size: 171%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 125%" href="/tags/chrome/">Chrome</a>
+<a style="font-size: 145%" href="/tags/fan-qiang/">翻墙</a>
+<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
+<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
+<a style="font-size: 90%" href="/tags/git/">git</a>
+<a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
+<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 171%" href="/tags/goagent/">GoAgent</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 180%" href="/tags/linux/">Linux</a>
+<a style="font-size: 125%" href="/tags/google/">Google</a>
 
   </ul>
 </section>
