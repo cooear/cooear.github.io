@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: 命令 | 酷耳]]></title>
   <link href="http://cooear.com/tags/ming-ling/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T10:57:12+08:00</updated>
+  <updated>2016-05-09T11:11:57+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -631,6 +631,232 @@ Enter first number:
 <p><strong>注意</strong>：几乎所欲的分支都包含路gcc编译器，大部分是g++编译器，当然有些是没有的。你可以使用apt或者yum命令安装某些必须的软件包。</p></li>
 </ol>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux中find命令实例]]></title>
+    <link href="http://cooear.com/blog/2014/04/linuxzhong-findming-ling-shi-li/"/>
+    <updated>2014-04-25T00:01:24+08:00</updated>
+    <id>http://cooear.com/blog/2014/04/linuxzhong-findming-ling-shi-li</id>
+    <content type="html"><![CDATA[<p>Find命令是Linux中一个重要且常用的命令。Find命令主要用于基于匹配条件和参数的文件和目录列表的搜索和定位。通过这篇文章我们将展示在日常工作中可能用到的Find命令实例。</p>
+
+<p><strong>1、在当前目录查找文件名</strong></p>
+
+<p>在当前目录下查找所有名字为cooear.txt的文件。</p>
+
+<pre><code># find . -name cooear.txt
+./cooear.txt
+</code></pre>
+
+<p><strong>2、在/home目录查找文件</strong></p>
+
+<p>在/home目录下查找所有名字为cooear.txt的文件。</p>
+
+<!--more-->
+
+
+<pre><code># find /home -name cooear.txt
+/home/cooear.txt
+</code></pre>
+
+<p><strong>3、忽略大小写查找文件名</strong></p>
+
+<p>在/home目录下查找所有名字为cooear.txt的文件忽略名字大小写。</p>
+
+<pre><code># find /home -iname cooear.txt
+./cooear.txt
+./Cooear.txt    
+</code></pre>
+
+<p><strong>4、查找目录名</strong></p>
+
+<p>在/目录下查找Cooear目录。</p>
+
+<pre><code># find / -type d -name Cooear
+/Cooear
+</code></pre>
+
+<p><strong>5、查找某个名字的php文件</strong></p>
+
+<p>在当前目录下查找名字为cooear.php的php文件。</p>
+
+<pre><code># find . -type f -name cooear.php
+./cooear.php    
+</code></pre>
+
+<p><strong>6、查找特定目录下个所有php文件</strong></p>
+
+<p>在某个目录中查找所有的php文件。</p>
+
+<pre><code># find . -type f -name "*.php"
+./cooear.php
+./login.php
+./index.php
+</code></pre>
+
+<p><strong>7、查找某个目录下777权限的文件</strong></p>
+
+<pre><code># find . -type f -perm 0777 -print
+</code></pre>
+
+<p><strong>8、查找某个目录下不是777权限的文件</strong></p>
+
+<pre><code># find / -type f ! -perm 777
+</code></pre>
+
+<p><strong>9、查找具有644权限的SGID文件</strong></p>
+
+<pre><code># find / -perm 2644
+</code></pre>
+
+<p><strong>10、查找具有551权限的Sticky Bit文件</strong></p>
+
+<pre><code># find / -perm 1551
+</code></pre>
+
+<p><strong>11、查找SUID文件</strong></p>
+
+<pre><code># find / -perm /u=s
+</code></pre>
+
+<p><strong>12、查找SGID文件</strong></p>
+
+<pre><code># find / -perm /g+s
+</code></pre>
+
+<p><strong>13、查找某个目录下的只读权限文件</strong></p>
+
+<pre><code># find / -perm /u=r
+</code></pre>
+
+<p><strong>14、查找所有可执行文件</strong></p>
+
+<pre><code># find / -perm /a=x
+</code></pre>
+
+<p><strong>15、查找所有777权限的文件然后修改权限为644</strong></p>
+
+<p>在某个目录中查找所有777权限的目录并使用chmod修改权限为644。</p>
+
+<pre><code># find / -type f -perm 0777 -print -exec chmod 644 {} \;                        
+</code></pre>
+
+<p><strong>16、查找777权限的目录并修改权限为755</strong></p>
+
+<p>在某个目录中查找所有777权限的目录并使用chmod修改权限为755。</p>
+
+<pre><code># find / -type d -perm 777 -print -exec chmod 755 {} \;
+</code></pre>
+
+<p><strong>17、查找并删除特定的文件</strong></p>
+
+<pre><code># find . -type f -name "tecmint.txt" -exec rm -f {} \;
+</code></pre>
+
+<p><strong>18、查找并删除多个文件</strong></p>
+
+<pre><code># find . -type f -name "*.txt" -exec rm -f {} \;
+
+OR
+
+# find . -type f -name "*.mp3" -exec rm -f {} \;
+</code></pre>
+
+<p><strong>19、查找所有的空文件</strong></p>
+
+<pre><code># find /tmp -type f -empty
+</code></pre>
+
+<p><strong>20、查找所有的空目录</strong></p>
+
+<pre><code># find /tmp -type d -empty
+</code></pre>
+
+<p><strong>21、查找所有的隐藏文件</strong></p>
+
+<pre><code># find /tmp -type f -name ".*"
+</code></pre>
+
+<p><strong>22、查找基于用户的某个特定文件</strong></p>
+
+<p>在root的根目录下查找属于root用户的所有的或者单个的叫做cooear.txt的文件。</p>
+
+<pre><code># find / -user root -name cooear.txt
+</code></pre>
+
+<p><strong>23、基于用户查找文件</strong></p>
+
+<p>在/home目录下查找cooear用户的文件。</p>
+
+<pre><code># find /home -user cooear
+</code></pre>
+
+<p><strong>24、基于组查找文件</strong></p>
+
+<p>在/home目录下查找属于Developer用户组的文件。</p>
+
+<pre><code># find /home -group developer
+</code></pre>
+
+<p><strong>25、查找某个用户所属的特定文件</strong></p>
+
+<p>在/home目录下查找cooear用户的所有.txt文件。</p>
+
+<pre><code># find /home -user cooear -iname "*.txt"
+</code></pre>
+
+<p><strong>26、查找近50天修改的文件</strong></p>
+
+<pre><code># find / -mtime 50
+</code></pre>
+
+<p><strong>27、查找近50访问过的文件</strong></p>
+
+<pre><code># find / -atime 50
+</code></pre>
+
+<p><strong>28、查找近50-100天内修改过的文件</strong></p>
+
+<pre><code># find / -mtime +50 –mtime -100
+</code></pre>
+
+<p><strong>29、查找在近1小时变化过的文件</strong></p>
+
+<pre><code># find / -cmin -60
+</code></pre>
+
+<p><strong>30、查找近1小时修改过的文件</strong></p>
+
+<pre><code># find / -mmin -60
+</code></pre>
+
+<p><strong>31、查找近1小时访问过的文件</strong></p>
+
+<pre><code># find / -amin -60
+</code></pre>
+
+<p><strong>32、查找大小为500M的文件</strong></p>
+
+<pre><code># find / -size 50M
+</code></pre>
+
+<p><strong>33、查找文件大小在50MB-100MB的文件</strong></p>
+
+<pre><code># find / -size +50M -size -100M
+</code></pre>
+
+<p><strong>34、查找并删除文件大小为100MB的文件</strong></p>
+
+<pre><code># find / -size +100M -exec rm -rf {} \;
+</code></pre>
+
+<p><strong>35、查找并删除某些特定文件</strong></p>
+
+<p>使用一个命令查找所有大小为10MB的.mp3文件并删除。</p>
+
+<pre><code># find / -type f -name *.mp3 -size +10M -exec rm {} \;                                                                          
+</code></pre>
 ]]></content>
   </entry>
   
