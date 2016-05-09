@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T10:31:36+08:00</updated>
+  <updated>2016-05-09T10:32:59+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -1642,7 +1642,7 @@ Report bugs to .
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[其实你有无数gmail帐号]]></title>
+    <title type="html"><![CDATA[其实你有无数Gmail帐号]]></title>
     <link href="http://cooear.com/blog/2013/09/you-have-numerous-gmail-account/"/>
     <updated>2013-09-05T10:24:30+08:00</updated>
     <id>http://cooear.com/blog/2013/09/you-have-numerous-gmail-account</id>
@@ -1652,7 +1652,7 @@ Report bugs to .
 
 <p>Gmail该特性最关键的还是为了方便地建立过滤器。因为发送方的Email规则我们往往难以掌控，因此基于发送方邮件建立的过滤器往往会比较“不靠谱”，而且维护复杂。然而，基于接受邮件地址来建立过滤器则非常方便。</p>
 
-<p>例如：我分别在多个bbs和视频网站分别注册了帐号google+bbs@gmail.com、<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x67;&#x6f;&#x6f;&#103;&#x6c;&#x65;&#43;&#118;&#105;&#100;&#x65;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x6f;&#x6f;&#x67;&#108;&#101;&#x2b;&#118;&#x69;&#100;&#x65;&#111;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a> ,这样我们就可以根据不同的帐号设置不同的过滤规则了将bbs和视频网站的邮件分别设置过滤规则了。</p>
+<p>例如：我分别在多个bbs和视频网站分别注册了帐号google+bbs@gmail.com、google+video@gmail.com,这样我们就可以根据不同的帐号设置不同的过滤规则了将bbs和视频网站的邮件分别设置过滤规则了。</p>
 
 <p>另外，Gmail的此特性可以允许你在同一个网站同时注册多个帐号而不用申请多个邮箱帐号，而且一个Gmail帐号就可以管理所有的帐号邮件。</p>
 
