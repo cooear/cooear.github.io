@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Chrome | 酷耳]]></title>
   <link href="http://cooear.com/tags/chrome/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T10:22:43+08:00</updated>
+  <updated>2016-05-09T10:28:59+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -87,6 +87,29 @@
 <p>旧地址(请不要再使用这个地址了，已经很久不更新了。):</p>
 
 <p><del><a href="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt">https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</a></del></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[You have numerous Gmail account]]></title>
+    <link href="http://cooear.com/blog/2013/09/you-have-numerous-gmail-account/"/>
+    <updated>2013-09-05T10:24:30+08:00</updated>
+    <id>http://cooear.com/blog/2013/09/you-have-numerous-gmail-account</id>
+    <content type="html"><![CDATA[<p>Gmail众所周知的一个秘密就是你可以在自己的邮箱帐户名中间加入“.”，或者在帐户名后面加入“+”来创造出无限多个帐户名。比如 google@gmail.com是你的主用户名，你往goo.gle@gmail.com发邮件也可以收到，你往google+shit@gmail.com发邮件 也可以收到。</p>
+
+<p>也许会有很多人觉得这真是画蛇添足的功能或者说难道这是Gmail的bug？想一下Google为什么要推出这个功能呢？难道是Google吃饱撑的了？但酷耳要说这绝不是Google吃饱撑的或者Gmail的bug而是Gmail的feature，而且是目前为止仅有Gmail有的特性（至少本人接触到的国内外的所有邮箱仅Gmail有）。</p>
+
+<p>Gmail该特性最关键的还是为了方便地建立过滤器。因为发送方的Email规则我们往往难以掌控，因此基于发送方邮件建立的过滤器往往会比较“不靠谱”，而且维护复杂。然而，基于接受邮件地址来建立过滤器则非常方便。</p>
+
+<p>例如：我分别在多个bbs和视频网站分别注册了帐号google+bbs@gmail.com、<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#103;&#x6f;&#111;&#103;&#108;&#101;&#43;&#x76;&#105;&#x64;&#101;&#111;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x6f;&#x6f;&#x67;&#108;&#x65;&#x2b;&#x76;&#105;&#100;&#x65;&#x6f;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;</a> ,这样我们就可以根据不同的帐号设置不同的过滤规则了将bbs和视频网站的邮件分别设置过滤规则了。</p>
+
+<p>另外，Gmail的此特性可以允许你在同一个网站同时注册多个帐号而不用申请多个邮箱帐号，而且一个Gmail帐号就可以管理所有的帐号邮件。</p>
+
+<p>个人用途：</p>
+
+<p>在给别人留email或者注册网站信息时使用不同的Gmail别名，如：google+cooear@gmail.com、google+bank@gmail.com、google+baidu@gmail.com、google+taobao@gmail.com等，当对应别名收到骚扰邮件或者广告邮件时就可以知道什么地方泄漏了自己有邮件信息。</p>
+
+<p>……</p>
 ]]></content>
   </entry>
   
