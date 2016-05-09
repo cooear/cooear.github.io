@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: 激活 | 酷耳]]></title>
   <link href="http://cooear.com/tags/ji-huo/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T10:48:33+08:00</updated>
+  <updated>2016-05-09T10:54:11+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -32,6 +32,9 @@
 <p>方法一：鼠标邮件点击“我的电脑”—>“属性”，点激活详情–>更改密钥，在提示框中输入正版序列号。</p>
 
 <p>方法二：运行cmd提示符，然后在命令提示符下执行slmgr.vbs -ipk后面加上空格和序列号(slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx)之后键入回车，稍等一会OK。</p>
+
+<!--more-->
+
 
 <p><strong>(3)、激活工具激活</strong></p>
 

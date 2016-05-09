@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Yii | 酷耳]]></title>
   <link href="http://cooear.com/tags/yii/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T10:48:33+08:00</updated>
+  <updated>2016-05-09T10:54:11+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -32,7 +32,11 @@ $(document).ready(function(){
 &lt;/script&gt;
 </code></pre>
 
-<p>因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
+<!--more-->
+
+
+<p>
+因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
 
 <pre><code>class MyCaptchaAction extends CCaptchaAction {
    const SESSION_VAR_PREFIX='Ext.MyCaptchaAction.';

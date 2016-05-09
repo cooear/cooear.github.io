@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T10:48:33+08:00</updated>
+  <updated>2016-05-09T10:54:11+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -1604,7 +1604,11 @@ $(document).ready(function(){
 &lt;/script&gt;
 </code></pre>
 
-<p>因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
+<!--more-->
+
+
+<p>
+因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
 
 <pre><code>class MyCaptchaAction extends CCaptchaAction {
    const SESSION_VAR_PREFIX='Ext.MyCaptchaAction.';
@@ -1714,6 +1718,9 @@ $(document).ready(function(){
     <content type="html"><![CDATA[<p>Gmail众所周知的一个秘密就是你可以在自己的邮箱帐户名中间加入“.”，或者在帐户名后面加入“+”来创造出无限多个帐户名。比如 google@gmail.com是你的主用户名，你往goo.gle@gmail.com发邮件也可以收到，你往google+shit@gmail.com发邮件 也可以收到。</p>
 
 <p>也许会有很多人觉得这真是画蛇添足的功能或者说难道这是Gmail的bug？想一下Google为什么要推出这个功能呢？难道是Google吃饱撑的了？但酷耳要说这绝不是Google吃饱撑的或者Gmail的bug而是Gmail的feature，而且是目前为止仅有Gmail有的特性（至少本人接触到的国内外的所有邮箱仅Gmail有）。</p>
+
+<!--more-->
+
 
 <p>Gmail该特性最关键的还是为了方便地建立过滤器。因为发送方的Email规则我们往往难以掌控，因此基于发送方邮件建立的过滤器往往会比较“不靠谱”，而且维护复杂。然而，基于接受邮件地址来建立过滤器则非常方便。</p>
 
@@ -2092,6 +2099,9 @@ root     pts/1    192.168.250.110  10:45    0.00s  0.03s  0.02s w
 <p>方法一：鼠标邮件点击“我的电脑”—>“属性”，点激活详情–>更改密钥，在提示框中输入正版序列号。</p>
 
 <p>方法二：运行cmd提示符，然后在命令提示符下执行slmgr.vbs -ipk后面加上空格和序列号(slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx)之后键入回车，稍等一会OK。</p>
+
+<!--more-->
+
 
 <p><strong>(3)、激活工具激活</strong></p>
 

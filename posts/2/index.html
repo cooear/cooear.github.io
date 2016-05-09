@@ -164,51 +164,12 @@ $(document).ready(function(){
 &lt;/script&gt;
 </code></pre>
 
-<p>因为Yii自带的验证码组件只提供了字母类的验证，现根据网络提供可以实现数字验证码的代码：</p>
-
-<pre><code>class MyCaptchaAction extends CCaptchaAction {
-   const SESSION_VAR_PREFIX='Ext.MyCaptchaAction.';
-   public $minLength=4; //默认四位
-   public $maxLength=4; //默认四位
-
-   protected function generateVerifyCode()
-   {
-       if($this-&gt;minLength&lt;3)
-           $this-&gt;minLength=3;
-       if($this-&gt;maxLength&gt;20)
-           $this-&gt;maxLength=20;
-       if($this-&gt;minLength&gt;$this-&gt;maxLength)
-           $this-&gt;maxLength=$this-&gt;minLength;
-       $length=rand($this-&gt;minLength,$this-&gt;maxLength);
-
-       $letters='1234567890';//此处可以去掉数字1和0避免和字母L和O混淆
-       $code='';
-       for($i=0;$i&lt;$length;++$i)
-       {
-           $code.=$letters[rand(0,10)];
-       }
-
-       return $code;
-   }
-}
-</code></pre>
-
-<p>放到 protected/extensions 目录</p>
-
-<pre><code>//在配置文件 protected/config/main.php中自动加载 extensions 目录的类
-'import'=&gt;array(
-   'application.models.*',
-   'application.components.*',
-   'application.extensions.*',
-),
-
-//使用:
-'captcha'=&gt;array(
-   'class'=&gt;'application.extensions.MyCaptchaAction',
-),  
-</code></pre>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/12/yii-verification-code/">阅读全文 &rarr;</a>
+    </footer>
   
 
 
@@ -275,19 +236,12 @@ $(document).ready(function(){
 
 <p>也许会有很多人觉得这真是画蛇添足的功能或者说难道这是Gmail的bug？想一下Google为什么要推出这个功能呢？难道是Google吃饱撑的了？但酷耳要说这绝不是Google吃饱撑的或者Gmail的bug而是Gmail的feature，而且是目前为止仅有Gmail有的特性（至少本人接触到的国内外的所有邮箱仅Gmail有）。</p>
 
-<p>Gmail该特性最关键的还是为了方便地建立过滤器。因为发送方的Email规则我们往往难以掌控，因此基于发送方邮件建立的过滤器往往会比较“不靠谱”，而且维护复杂。然而，基于接受邮件地址来建立过滤器则非常方便。</p>
-
-<p>例如：我分别在多个bbs和视频网站分别注册了帐号google+bbs@gmail.com、google+video@gmail.com,这样我们就可以根据不同的帐号设置不同的过滤规则了将bbs和视频网站的邮件分别设置过滤规则了。</p>
-
-<p>另外，Gmail的此特性可以允许你在同一个网站同时注册多个帐号而不用申请多个邮箱帐号，而且一个Gmail帐号就可以管理所有的帐号邮件。</p>
-
-<p>个人用途：</p>
-
-<p>在给别人留email或者注册网站信息时使用不同的Gmail别名，如：google+cooear@gmail.com、google+bank@gmail.com、google+baidu@gmail.com、google+taobao@gmail.com等，当对应别名收到骚扰邮件或者广告邮件时就可以知道什么地方泄漏了自己有邮件信息。</p>
-
-<p>……</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/09/you-have-numerous-gmail-account/">阅读全文 &rarr;</a>
+    </footer>
   
 
 
@@ -490,55 +444,12 @@ root     pts/1        2013-01-22 10:45 (192.168.250.110)
 
 <p>方法二：运行cmd提示符，然后在命令提示符下执行slmgr.vbs -ipk后面加上空格和序列号(slmgr.vbs -ipk xxxxx-xxxxx-xxxxx-xxxxx)之后键入回车，稍等一会OK。</p>
 
-<p><strong>(3)、激活工具激活</strong></p>
-
-<p>亲测<a href="http://pan.baidu.com/s/1hrZHiOO">永久激活工具下载</a>(激活后系统水印消失)</p>
-
-<h3>专业版下载链接：</h3>
-
-<p>win8中文专业版32位:</p>
-
-<pre><code>ed2k://|file|cn_windows_8_x86_dvd_915414.iso|2679801856|9AF10141BFD61BC66D9D6459758D7749|/
-</code></pre>
-
-<p>win8 中文专业版64位:</p>
-
-<pre><code>ed2k://|file|cn_windows_8_x64_dvd_915407.iso|3652950016|5C7F8C212BD3A1827866563773A431C2|/
-</code></pre>
-
-<p>win8英文专业版32位：</p>
-
-<pre><code>ed2k://|file|en_windows_8_x86_dvd_915417.iso|2632460288|C357F5451EB803897CAA93437E0A7535|/
-</code></pre>
-
-<p>win8英文专业版64位：</p>
-
-<pre><code>ed2k://|file|en_windows_8_x64_dvd_915440.iso|3581853696|40FD000F50E34307A9C684C5F6BF29A6|/
-</code></pre>
-
-<h3>企业版下载链接：###</h3>
-
-<p>win8 中文企业版 64位:</p>
-
-<pre><code>ed2k://|file|cn_windows_8_enterprise_x64_dvd_917570.iso|3560837120|8CAE8064C4B8F9CD84941B4FF4A34722|/
-</code></pre>
-
-<p>win8中文企业版 32位:</p>
-
-<pre><code>ed2k://|file|cn_windows_8_enterprise_x86_dvd_917682.iso|2597502976|7B6541942A16EB54BC81E84558DF09DF|/
-</code></pre>
-
-<p>win8英文企业版32位：</p>
-
-<pre><code>ed2k://|file|en_windows_8_enterprise_x86_dvd_917587.iso|2551154688|3E6349B65AF73C12C73A08B9BB9AA0F3|/
-</code></pre>
-
-<p>win8英文企业版64位：</p>
-
-<pre><code>ed2k://|file|en_windows_8_enterprise_x64_dvd_917522.iso|3490912256|D20A1F1E7B11B16FA1D56502EDF81962|/           
-</code></pre>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/05/win8-download-activation/">阅读全文 &rarr;</a>
+    </footer>
   
 
 
@@ -625,39 +536,39 @@ root     pts/1        2013-01-22 10:45 (192.168.250.110)
 <section>
   <h1>Tags</h1>
   <ul class="tag-cloud">
-<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
-<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
-<a style="font-size: 125%" href="/tags/xx-net/">XX-Net</a>
-<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
-<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
-<a style="font-size: 145%" href="/tags/switchyomega/">SwitchyOmega</a>
-<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
-<a style="font-size: 160%" href="/tags/gmail/">Gmail</a>
 <a style="font-size: 90%" href="/tags/win8/">win8</a>
-<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
-<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
-<a style="font-size: 125%" href="/tags/gae/">GAE</a>
-<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
-<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
-<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
-<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
-<a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
-<a style="font-size: 90%" href="/tags/yii/">Yii</a>
-<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
-<a style="font-size: 90%" href="/tags/github/">GitHub</a>
-<a style="font-size: 171%" href="/tags/gfw/">GFW</a>
-<a style="font-size: 125%" href="/tags/chrome/">Chrome</a>
+<a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
 <a style="font-size: 145%" href="/tags/fan-qiang/">翻墙</a>
-<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
-<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
-<a style="font-size: 90%" href="/tags/git/">git</a>
+<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
+<a style="font-size: 125%" href="/tags/xx-net/">XX-Net</a>
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
 <a style="font-size: 145%" href="/tags/ming-ling/">命令</a>
 <a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
 <a style="font-size: 171%" href="/tags/goagent/">GoAgent</a>
-<a style="font-size: 90%" href="/tags/scp/">scp</a>
-<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 125%" href="/tags/chrome/">Chrome</a>
+<a style="font-size: 171%" href="/tags/vpn/">VPN</a>
+<a style="font-size: 160%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
+<a style="font-size: 90%" href="/tags/yii/">Yii</a>
+<a style="font-size: 90%" href="/tags/github/">GitHub</a>
+<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
+<a style="font-size: 90%" href="/tags/git/">git</a>
 <a style="font-size: 180%" href="/tags/linux/">Linux</a>
+<a style="font-size: 171%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
 <a style="font-size: 125%" href="/tags/google/">Google</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
+<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 125%" href="/tags/gae/">GAE</a>
+<a style="font-size: 171%" href="/tags/lantern/">Lantern</a>
+<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
+<a style="font-size: 145%" href="/tags/switchyomega/">SwitchyOmega</a>
+<a style="font-size: 160%" href="/tags/gmail/">Gmail</a>
 
   </ul>
 </section>
