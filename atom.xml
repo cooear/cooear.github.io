@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-09T12:14:53+08:00</updated>
+  <updated>2016-05-09T12:16:01+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -1121,7 +1121,7 @@ stop() {
 
 <h3>二、下载你系统对应的客户端程序，安装<strong>Lantern</strong>.</h3>
 
-<p><a href="http://pan.baidu.com/s/1c2nwwEW">Windows</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1qXYePy8">Mac</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1bo92QYj">Linux</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta.apk">Android</a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="http://pan.baidu.com/s/1cG6GqE">Android版网盘下载</a></p>
+<p><a href="http://pan.baidu.com/s/1c2nwwEW">Windows</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1qXYePy8">Mac</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://pan.baidu.com/s/1bo92QYj">Linux</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta.apk">Android</a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="http://pan.baidu.com/s/1cG6GqE">Android</a>网盘下载</p>
 
 <p>如果遇到安装错误、安装不了，请挂代理安装，因为需要连接到亚马逊服务器下载主程序和java程序。Lantern必须要在Java环境下运行，否则会出问题。</p>
 
