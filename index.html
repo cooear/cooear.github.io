@@ -9,7 +9,7 @@
   <meta name="author" content="cooear">
 
   
-  <meta name="description" content="一、注册Google账号 step1: 注册Google账号，为后面顺利使用appengine请尽量绑定手机号。 step2: 并登录Google App Engine，并按下图操作创建自己的application. ">
+  <meta name="description" content="国内特殊的网络环境使得科学上网的门槛越来越高，越来越难；网上各种免费的付费的代理也总是会有各种各样的问题(Lanter还算是目前比较快速稳定的免费代理)；所以受够了别人家梯子的各种问题，那么今天就教各位搭建一个免费的专享带宽，超高速度，超低延迟梯子(AWS VPS)。 AWS（Amazon Web &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/05/create-amazon-web-services/">Amazon免费虚拟主机搭建</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-05-09T16:38:32+08:00'><span class='date'>2016-05-09</span> <span class='time'>4:38 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>国内特殊的网络环境使得科学上网的门槛越来越高，越来越难；网上各种免费的付费的代理也总是会有各种各样的问题(<a href="/blog/2016/05/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lanter</a>还算是目前比较快速稳定的免费代理)；所以受够了别人家梯子的各种问题，那么今天就教各位搭建一个免费的专享带宽，超高速度，超低延迟梯子(AWS VPS)。</p>
+
+<p>AWS（Amazon Web Services)，是亚马逊提供的在线虚拟主机服务。现在AWS提供的基础服务免费一年，流量每月15G，只要你不是天天上网下大文件的话，一般不会超。选择AWS，首先是因为它比较（bu）稳（yao）定（qian），并且它有东京的节点，网上很多其他主机商的节点都远在美国，距离近延迟低是一定的。</p>
+
+<h3>一、Amazon EC2免费VPS申请</h3>
+
+<ol>
+<li>打开<a href="http://aws.amazon.com/cn/">AWS官网</a></li>
+<li>如果已有亚马逊账号可以直接使用那个账号登陆就好，没有的话注册一个(填写付款信息请认真添加后面要验证，只支持信用卡，银联Visa等都可以)</li>
+</ol>
+
+
+<p><strong>注册付款信息页</strong></p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146278598101.jpg" title="EC2 注册付款信息" alt="EC2 注册付款信息" /></p>
+
+<p>接下来是身份验证部分(填写真实的信息)，国家选中国，填入手机号（推荐）或者座机号（注意区号），分机没有的话留空就好了，然后点“立刻呼叫我”。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/05/create-amazon-web-services/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -524,52 +574,6 @@ git rm -r *                                               # 递归删除
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/linuxzhong-findming-ling-shi-li/">Linux中find命令实例</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-04-25T00:01:24+08:00'><span class='date'>2014-04-25</span> <span class='time'>12:01 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Find命令是Linux中一个重要且常用的命令。Find命令主要用于基于匹配条件和参数的文件和目录列表的搜索和定位。通过这篇文章我们将展示在日常工作中可能用到的Find命令实例。</p>
-
-<p><strong>1、在当前目录查找文件名</strong></p>
-
-<p>在当前目录下查找所有名字为cooear.txt的文件。</p>
-
-<pre><code># find . -name cooear.txt
-./cooear.txt
-</code></pre>
-
-<p><strong>2、在/home目录查找文件</strong></p>
-
-<p>在/home目录下查找所有名字为cooear.txt的文件。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/linuxzhong-findming-ling-shi-li/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="next" href="/posts/2">下一页 &rarr;</a>
@@ -583,6 +587,10 @@ git rm -r *                                               # 递归删除
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/05/create-amazon-web-services/">Amazon免费虚拟主机搭建</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2016/05/new-gae-create/">最新Google GAE账号注册</a>
@@ -600,10 +608,6 @@ git rm -r *                                               # 递归删除
         <a href="/blog/2016/05/20ge-bi-jiao-gao-ji-de-linuxming-ling/">20个比较高级的Linux命令</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2016/04/guo-wai-dnsfu-wu-qi-lie-biao/">国外DNS服务器列表</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -613,39 +617,41 @@ git rm -r *                                               # 递归删除
 <section>
   <h1>Tags</h1>
   <ul class="tag-cloud">
-<a style="font-size: 154%" href="/tags/gmail/">Gmail</a>
-<a style="font-size: 90%" href="/tags/win8/">win8</a>
-<a style="font-size: 122%" href="/tags/gae/">GAE</a>
-<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
-<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
-<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
-<a style="font-size: 164%" href="/tags/vpn/">VPN</a>
-<a style="font-size: 164%" href="/tags/goagent/">GoAgent</a>
-<a style="font-size: 164%" href="/tags/gfw/">GFW</a>
-<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
-<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
-<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
-<a style="font-size: 164%" href="/tags/lantern/">Lantern</a>
-<a style="font-size: 122%" href="/tags/chrome/">Chrome</a>
-<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
-<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
-<a style="font-size: 122%" href="/tags/xx-net/">XX-Net</a>
-<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
-<a style="font-size: 154%" href="/tags/ming-ling/">命令</a>
-<a style="font-size: 90%" href="/tags/git/">git</a>
-<a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
-<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
+<a style="font-size: 173%" href="/tags/gfw/">GFW</a>
+<a style="font-size: 141%" href="/tags/fan-qiang/">翻墙</a>
 <a style="font-size: 122%" href="/tags/google/">Google</a>
+<a style="font-size: 90%" href="/tags/huan-dian-chi/">换电池</a>
+<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 90%" href="/tags/amazon/">Amazon</a>
+<a style="font-size: 122%" href="/tags/xx-net/">XX-Net</a>
+<a style="font-size: 90%" href="/tags/switchysharp/">switchysharp</a>
+<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 122%" href="/tags/gae/">GAE</a>
+<a style="font-size: 154%" href="/tags/gmail/">Gmail</a>
+<a style="font-size: 122%" href="/tags/chrome/">Chrome</a>
+<a style="font-size: 90%" href="/tags/iphone/">Iphone</a>
+<a style="font-size: 90%" href="/tags/git/">git</a>
+<a style="font-size: 90%" href="/tags/shadowsocks/">ShadowSocks</a>
+<a style="font-size: 90%" href="/tags/an-quan/">安全</a>
+<a style="font-size: 164%" href="/tags/lantern/">Lantern</a>
 <a style="font-size: 154%" href="/tags/yu-fa/">语法</a>
+<a style="font-size: 90%" href="/tags/rsync/">rsync</a>
+<a style="font-size: 90%" href="/tags/jiao-cheng/">教程</a>
+<a style="font-size: 90%" href="/tags/ji-huo/">激活</a>
+<a style="font-size: 90%" href="/tags/ec2/">EC2</a>
+<a style="font-size: 90%" href="/tags/win8/">win8</a>
+<a style="font-size: 90%" href="/tags/cha-kan-yong-hu/">查看用户</a>
 <a style="font-size: 90%" href="/tags/openwrt/">Openwrt</a>
+<a style="font-size: 90%" href="/tags/proxy-switchyomega/">Proxy SwitchyOmega</a>
+<a style="font-size: 90%" href="/tags/yii/">Yii</a>
+<a style="font-size: 154%" href="/tags/ming-ling/">命令</a>
+<a style="font-size: 90%" href="/tags/pkill/">pkill</a>
 <a style="font-size: 180%" href="/tags/linux/">Linux</a>
 <a style="font-size: 141%" href="/tags/switchyomega/">SwitchyOmega</a>
-<a style="font-size: 90%" href="/tags/fen-xi/">分析</a>
-<a style="font-size: 90%" href="/tags/ri-zhi/">日志</a>
+<a style="font-size: 173%" href="/tags/vpn/">VPN</a>
 <a style="font-size: 90%" href="/tags/github/">GitHub</a>
-<a style="font-size: 90%" href="/tags/yii/">Yii</a>
-<a style="font-size: 141%" href="/tags/fan-qiang/">翻墙</a>
-<a style="font-size: 90%" href="/tags/scp/">scp</a>
+<a style="font-size: 164%" href="/tags/goagent/">GoAgent</a>
 
   </ul>
 </section>
