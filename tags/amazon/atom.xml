@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Amazon | 酷耳]]></title>
   <link href="http://cooear.com/tags/amazon/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-10T11:56:48+08:00</updated>
+  <updated>2016-05-10T12:03:25+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -206,7 +206,7 @@ ssserver -c /etc/shadowsocks.json -d start  // 启动shadowsocks
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146278598122.png" title="EC2编辑入站规则" alt="EC2编辑入站规则" /></p>
 
-<p>至此，AWS EC2免费主机上的SS已经搭建完毕，现在可以通过手机端的Shadowsocks客户端科学上网了，或者通过只能路由器实现<a href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">家庭网络自动透明代理</a>;当然也可以在EC2上搭建方便移动端iPhone、iPad、Android等设备连接的VPN(相对不安全)服务。</p>
+<p>至此，AWS EC2免费主机上的SS已经搭建完毕，现在可以通过手机端的Shadowsocks客户端科学上网了，或者通过只能路由器实现<a href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">家庭网络自动透明代理</a>;当然也可以在EC2上搭建方便移动端iPhone、iPad、Android等设备连接的VPN(PPTP相对不安全)服务。</p>
 ]]></content>
   </entry>
   
