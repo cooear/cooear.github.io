@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: GFW | 酷耳]]></title>
   <link href="http://cooear.com/tags/gfw/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-10T15:45:08+08:00</updated>
+  <updated>2016-05-10T15:47:54+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -18,7 +18,7 @@
     <link href="http://cooear.com/blog/2016/05/create-amazon-web-services/"/>
     <updated>2016-05-09T16:38:32+08:00</updated>
     <id>http://cooear.com/blog/2016/05/create-amazon-web-services</id>
-    <content type="html"><![CDATA[<p>国内特殊的网络环境使得科学上网的门槛越来越高，越来越难；网上各种免费的付费的代理也总是会有各种各样的问题(<a href="/blog/2016/05/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern</a>还算是目前比较快速稳定的免费代理)；所以受够了别人家梯子的各种问题，那么今天就教各位搭建一个免费的专享带宽，超高速度，超低延迟梯子(AWS VPS)。</p>
+    <content type="html"><![CDATA[<p>国内特殊的网络环境使得科学上网的门槛越来越高，越来越难；网上各种免费的付费的代理也总是会有各种各样的问题(<a href="/blog/2016/05/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern</a>还算是目前比较快速稳定安全的免费代理)；所以受够了别人家梯子的各种问题，那么今天就教各位搭建一个免费的专享带宽，超高速度，超低延迟梯子(AWS VPS)。</p>
 
 <p>AWS（Amazon Web Services)，是亚马逊提供的在线虚拟主机服务。现在AWS提供的基础服务免费一年，流量每月15G，只要你不是天天上网下大文件的话，一般不会超。选择AWS，首先是因为它比较（bu）稳（yao）定（qian），并且它有东京的节点，网上很多其他主机商的节点都远在美国，距离近延迟低是一定的。</p>
 
