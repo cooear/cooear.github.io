@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Amazon | 酷耳]]></title>
   <link href="http://cooear.com/tags/amazon/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-10T12:08:41+08:00</updated>
+  <updated>2016-05-10T12:09:57+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -25,7 +25,7 @@
 <h3>一、Amazon EC2免费VPS申请</h3>
 
 <ol>
-<li>打开<a href="http://aws.amazon.com/cn/">AWS官网</a></li>
+<li>打开<a href="http://aws.amazon.com/">AWS官网</a></li>
 <li>如果已有亚马逊账号可以直接使用那个账号登陆就好，没有的话注册一个(填写付款信息请认真添加后面要验证，只支持信用卡，银联Visa等都可以)</li>
 </ol>
 
