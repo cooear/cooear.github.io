@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: ShadowSocks | 酷耳]]></title>
   <link href="http://cooear.com/tags/shadowsocks/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-10T12:15:14+08:00</updated>
+  <updated>2016-05-10T12:18:55+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -197,6 +197,8 @@ stop() {
 </code></pre>
 
 <p><strong>注</strong>：至此路由器已经my_dnsmasq.conf里面的域名已经会自动使用ss代理翻墙</p>
+
+<p><a href="/blog/2016/05/create-amazon-web-services/">免费VPS主机申请</a></p>
 ]]></content>
   </entry>
   
