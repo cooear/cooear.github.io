@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: VPN | 酷耳]]></title>
   <link href="http://cooear.com/tags/vpn/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-10T12:09:57+08:00</updated>
+  <updated>2016-05-10T12:15:14+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Amazon免费虚拟主机搭建]]></title>
+    <title type="html"><![CDATA[Amazon EC2免费虚拟主机搭建]]></title>
     <link href="http://cooear.com/blog/2016/05/create-amazon-web-services/"/>
     <updated>2016-05-09T16:38:32+08:00</updated>
     <id>http://cooear.com/blog/2016/05/create-amazon-web-services</id>
@@ -97,7 +97,7 @@
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146278598114.jpg" title="EC2创建新密钥对" alt="EC2创建新密钥对" /></p>
 
-<p>在上图“密钥对名称”中输入一个你想要的名称如：r3r3.pem，然后点击“下载密钥对”就会下载一个r3.pem的文件，请将该文件保存到一个绝对安全的地方（该文件将是你登陆AWS服务器的凭证），然后启动实例。</p>
+<p>在上图“密钥对名称”中输入一个你想要的名称如：r3.pem，然后点击“下载密钥对”就会下载一个r3.pem的文件，请将该文件保存到一个绝对安全的地方（该文件将是你登陆AWS服务器的凭证），然后启动实例。</p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146278598115.jpg" title="启动EC2实例" alt="启动EC2实例" /></p>
 
@@ -117,7 +117,7 @@
 
 <ul>
 <li>如果是Windows，请参考AWS官方教程<a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html">使用putty连接服务器</a>。</li>
-<li>如果是mac</li>
+<li>如果是Mac</li>
 </ul>
 
 
