@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-11T17:20:45+08:00</updated>
+  <updated>2016-05-11T17:22:09+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -463,7 +463,7 @@ Firefox 需手动导入证书 data/gae_proxy/CA.crt 启动后生成
 虽然系统内置了公共appid, 还是建议部署自己的appid，公共appid限制看视频
 </code></pre>
 
-<p>根据个人使用经理感觉：</p>
+<p>根据个人使用的经历感觉：</p>
 
 <p><a href="http://cooear.com/blog/2016/05/create-amazon-web-services/">AWS EC2</a> > <a href="http://cooear.com/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">ShadowSocks</a> > <a href="http://cooear.com/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern</a> > <a href="http://cooear.com/blog/2016/05/xx-net-jie-li-goagent/">XX-Net</a>   > <a href="http://cooear.com/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">GAE</a></p>
 ]]></content>
