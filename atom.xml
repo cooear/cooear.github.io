@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-11T17:14:29+08:00</updated>
+  <updated>2016-05-11T17:20:45+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -457,7 +457,7 @@ Firefox 需手动导入证书 data/gae_proxy/CA.crt 启动后生成
 命令行启动方式：./start.sh 推荐Chrome + SwitchyOmega
 </code></pre>
 
-<h4>服务端####</h4>
+<h4>服务端</h4>
 
 <pre><code>协议采用3.3的版本，请重新部署服务端，服务端兼容3.1.x/3.2.x的客户端
 虽然系统内置了公共appid, 还是建议部署自己的appid，公共appid限制看视频
