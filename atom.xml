@@ -4,7 +4,7 @@
   <title><![CDATA[酷耳]]></title>
   <link href="http://cooear.com/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-11T11:31:56+08:00</updated>
+  <updated>2016-05-11T15:42:04+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -396,7 +396,76 @@ git fsck
 
 <p>XX-Net<a href="https://github.com/XX-net/XX-Net/blob/master/code/default/download.md">下载地址</a></p>
 
-<p><font color=red><em>持续更新中</em></font></p>
+<h3>XX-Net安装</h3>
+
+<p><strong>第一步</strong>：下载解压XX-Net，随便放到一个目录，然后执行start.bat（windows用户，如果是其他系统，请看解压文件中的readme.md，最好是以管理员身份运行，尤其是win10）；然后桌面会有一个XX-Net图标。</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570101.jpg" title="XX-Net 开启" alt="XX-Net 开启" /></p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570102.jpg" title="XX-Net 开启" alt="XX-Net 开启" /></p>
+
+<p><strong>第二步</strong>：打开后，最小化。在系统托盘中找到一个X标志，右键点击弹出菜单，选择【全局PAC智能代理】。</p>
+
+<p><strong>第三步</strong>：此时随便打开一个浏览器，输入某些网站，就都可以访问了。</p>
+
+<p>如果出现如下问题：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570103.jpg" title="XX-Net 开启" alt="XX-Net 开启" /></p>
+
+<p>可以安装<a href="http://cooear.com/blog/2014/05/switchyomega-configuration/">SwitchyOmega</a>插件解决，如图：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570104.jpg" title="XX-Net 配置" alt="XX-Net 配置" /></p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570105.jpg" title="XX-Net 配置" alt="XX-Net 配置" /></p>
+
+<h3>部署私有XX-Net至GAE</h3>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570106.jpg" title="XX-Net 部署至GAE" alt="XX-Net 部署至GAE" /></p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570107.jpg" title="XX-Net 部署至GAE授权" alt="XX-Net 部署至GAE授权" /></p>
+
+<p>部署完毕：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570108.jpg" title="XX-Net 部署至GAE完毕" alt="XX-Net 部署至GAE完毕" /></p>
+
+<h3>配置GAEProxy</h3>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570109.jpg" title="XX-Net 配置GAEProxy" alt="XX-Net 配置GAEProxy" /></p>
+
+<p>完成XX-Net配置及私有APP ID配置：</p>
+
+<p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570110.jpg" title="XX-Net 配置完成" alt="XX-Net 配置完成" /></p>
+
+<h4>Windows下, 双击 start.lnk/start.vbs</h4>
+
+<pre><code>托盘图标：点击可弹出Web管理界面, 右键可显示常用功能菜单。
+Win7/8/10：提示请求管理员权限, 安装CA证书。请点击同意。
+推荐用Chrome浏览器, 安装SwichySharp, 可在swichysharp目录下找到插件和配置文件
+Firefox 需手动导入证书 data/gae_proxy/CA.crt 启动后生成
+</code></pre>
+
+<h4>Linux下, 执行 start.sh</h4>
+
+<pre><code>自动导入证书，需安装 libnss3-tools 包
+第一次启动, 请用sudo ./start.sh, 以安装CA证书
+配置http代理 localhost 8087, 勾选全部协议使用这个代理。 推荐Chrome + SwitchyOmega
+</code></pre>
+
+<h4>Mac下，双击 start.command</h4>
+
+<pre><code>会自动导入证书，如果还有提示非安全连接，请手动导入data/gae_proxy/CA.crt证书
+命令行启动方式：./start.sh 推荐Chrome + SwitchyOmega
+</code></pre>
+
+<h4>服务端####</h4>
+
+<pre><code>协议采用3.3的版本，请重新部署服务端，服务端兼容3.1.x/3.2.x的客户端
+虽然系统内置了公共appid, 还是建议部署自己的appid，公共appid限制看视频
+</code></pre>
+
+<p>根据个人使用经理感觉：</p>
+
+<p><a href="http://cooear.com/blog/2016/05/create-amazon-web-services/">AWS EC2</a> > <a href="http://cooear.com/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">ShadowSocks</a> > <a href="http://cooear.com/blog/2014/08/lantern-deng-long-an-zhuang-he-shi-yong-jiao-cheng/">Lantern</a> > <a href="http://cooear.com/blog/2016/05/xx-net-jie-li-goagent/">XX-Net</a>   > <a href="http://cooear.com/blog/2014/05/goagent-switchysharp-tu-wen-jiao-cheng/">GAE</a></p>
 ]]></content>
   </entry>
   
