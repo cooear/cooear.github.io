@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: VPN | 酷耳]]></title>
   <link href="http://cooear.com/tags/vpn/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-11T18:41:42+08:00</updated>
+  <updated>2016-05-12T09:53:41+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -30,14 +30,14 @@
 </ol>
 
 
+<!--more-->
+
+
 <p><strong>注册付款信息页</strong></p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/146278598101.jpg" title="EC2 注册付款信息" alt="EC2 注册付款信息" /></p>
 
 <p>接下来是身份验证部分(填写真实的信息)，国家选中国，填入手机号（推荐）或者座机号（注意区号），分机没有的话留空就好了，然后点“立刻呼叫我”。</p>
-
-<!--more-->
-
 
 <p><strong>身份验证</strong></p>
 
@@ -270,6 +270,8 @@ ssserver -c /etc/shadowsocks.json -d start  // 启动shadowsocks
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570105.jpg" title="XX-Net 配置" alt="XX-Net 配置" /></p>
 
 <h3>部署私有XX-Net至GAE</h3>
+
+<p><a href="/blog/2016/05/new-gae-create/">GAE AppID申请</a></p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570106.jpg" title="XX-Net 部署至GAE" alt="XX-Net 部署至GAE" /></p>
 

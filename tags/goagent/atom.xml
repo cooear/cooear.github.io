@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: GoAgent | 酷耳]]></title>
   <link href="http://cooear.com/tags/goagent/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-11T18:41:42+08:00</updated>
+  <updated>2016-05-12T09:53:41+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -169,6 +169,8 @@
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570105.jpg" title="XX-Net 配置" alt="XX-Net 配置" /></p>
 
 <h3>部署私有XX-Net至GAE</h3>
+
+<p><a href="/blog/2016/05/new-gae-create/">GAE AppID申请</a></p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/05/14629492570106.jpg" title="XX-Net 部署至GAE" alt="XX-Net 部署至GAE" /></p>
 
