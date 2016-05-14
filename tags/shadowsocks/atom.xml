@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: ShadowSocks | 酷耳]]></title>
   <link href="http://cooear.com/tags/shadowsocks/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-13T10:53:30+08:00</updated>
+  <updated>2016-05-14T08:13:27+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -208,7 +208,7 @@ ssserver -c /etc/shadowsocks.json -d start  // 启动shadowsocks
 
 <p>至此，AWS EC2免费主机上的SS已经搭建完毕，现在可以通过手机端的Shadowsocks客户端科学上网了，或者通过智能路由器实现<a href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">家庭网络自动透明代理</a>;当然也可以在EC2上搭建方便移动端iPhone、iPad、Android等设备连接的VPN(PPTP相对不安全)服务。</p>
 
-<p>海外VPS推荐：<a href="http://www.digitalocean.com">Digital Ocean</a>，<a href="http://www.linode.com">Linode</a> 和 <a href="http://www.vultr.com">Vultr</a>其它都属于不入流的。</p>
+<p>海外VPS推荐：<a href="http://www.digitalocean.com">Digital Ocean</a>，<a href="http://www.linode.com">Linode</a> 和 <a href="http://www.vultr.com">Vultr</a>其它大部分属于不入流的。</p>
 ]]></content>
   </entry>
   
