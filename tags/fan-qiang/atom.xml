@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: 翻墙 | 酷耳]]></title>
   <link href="http://cooear.com/tags/fan-qiang/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-15T23:42:06+08:00</updated>
+  <updated>2016-05-16T07:51:39+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -145,7 +145,7 @@ Firefox 需手动导入证书 data/gae_proxy/CA.crt 启动后生成
 
 <p>如果遇到安装错误、安装不了，请挂代理安装，因为需要连接到亚马逊服务器下载主程序和java程序。Lantern必须要在Java环境下运行，否则会出问题。</p>
 
-<p><strong>最新版本Lantern设置<a href="#2.1.2">直接跳至此</a>，新版本已经不需要登陆Gmail账号这些操作。</strong></p>
+<p><strong>最新版本Lantern设置<a href="#2.1.2">直接跳至此</a>，新版本已经不需要登陆<a href="/blog/2013/09/you-have-numerous-gmail-account/">Gmail账号</a>这些操作，且支持自动升级。</strong></p>
 
 <p><strong>2.1、</strong>完成后会弹出Lantern(灯笼)的介面面板，最新为<del>Lantern1.4.3</del> Lantern2.2.1,如图：</p>
 
