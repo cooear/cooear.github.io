@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: EC2 | 酷耳]]></title>
   <link href="http://cooear.com/tags/ec2/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-24T16:30:33+08:00</updated>
+  <updated>2016-05-24T16:33:07+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -226,6 +226,8 @@ ssserver -c /etc/shadowsocks.json -d start  // 启动shadowsocks
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/06/14640769913.jpg" title="启用代理" alt="启用代理" /></p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/06/14640769914.png" title="启用代理" alt="启用代理" /></p>
+
+<p>Chrome浏览器<a href="/blog/2014/05/switchyomega-configuration/">SwitchyOmega设置</a></p>
 ]]></content>
   </entry>
   
