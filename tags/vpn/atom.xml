@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: VPN | 酷耳]]></title>
   <link href="http://cooear.com/tags/vpn/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-24T16:36:23+08:00</updated>
+  <updated>2016-05-24T17:59:48+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -214,8 +214,9 @@ ssserver -c /etc/shadowsocks.json -d start  // 启动shadowsocks
 
 <p><a href="http://pan.baidu.com/s/1i5dJ9B3">Windows客户端</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/shadowsocks/shadowsocks-iOS/releases/tag/2.6.3">Mac OS X</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks">Android</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://itunes.apple.com/tc/app/shadowsocks/id665729974?mt=8">iOS</a></p>
 
-<p><strong>以Windows为例</strong>
-1、双击打开，如图设置代理服务器信息</p>
+<p><strong>以Windows为例</strong></p>
+
+<p>1、双击打开，如图设置代理服务器信息</p>
 
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/06/14640769911.jpg" title="设置代理服务器信息" alt="设置代理服务器信息" /></p>
 
