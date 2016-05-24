@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: ShadowSocks | 酷耳]]></title>
   <link href="http://cooear.com/tags/shadowsocks/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-05-24T16:33:07+08:00</updated>
+  <updated>2016-05-24T16:36:23+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -228,6 +228,8 @@ ssserver -c /etc/shadowsocks.json -d start  // 启动shadowsocks
 <p><img src="http://g1c1i0.cooear.com/images/uploads/2016/06/14640769914.png" title="启用代理" alt="启用代理" /></p>
 
 <p>Chrome浏览器<a href="/blog/2014/05/switchyomega-configuration/">SwitchyOmega设置</a></p>
+
+<h3>六、ShadowSocks<a href="/blog/2015/02/openwrtshi-yong-shadowsockstou-ming-dai-li-zhi-neng-fan-qiang-shang-wang/">路由器安装配置</a></h3>
 ]]></content>
   </entry>
   
