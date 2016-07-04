@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: command | 酷耳]]></title>
   <link href="http://cooear.com/tags/command/atom.xml" rel="self"/>
   <link href="http://cooear.com/"/>
-  <updated>2016-07-04T16:31:34+08:00</updated>
+  <updated>2016-07-04T16:32:35+08:00</updated>
   <id>http://cooear.com/</id>
   <author>
     <name><![CDATA[cooear]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Redis Command Support In Codis]]></title>
+    <title type="html"><![CDATA[Redis Command Support]]></title>
     <link href="http://cooear.com/blog/2016/07/redis-command-support-in-codis/"/>
     <updated>2016-07-04T16:26:18+08:00</updated>
     <id>http://cooear.com/blog/2016/07/redis-command-support-in-codis</id>
